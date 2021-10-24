@@ -12,7 +12,8 @@ const Header = () => {
                 <nav className = 'nav_options'>
                     <ul>
                         <Link to = '/' className = 'li'>Home</Link>
-                        <Link to = '/blog' className = 'li'>Blog</Link>
+                        <Link to='' className='li'>
+                            <a href='https://troveapp.co/blog/' target='_blank' rel = 'noreferrer'>Blog</a></Link>
                         <Link to = '/FAQ' className = 'li'>FAQ's</Link>
                         <Link to = '/Fees' className = 'li'>Fees</Link>
                     </ul>
