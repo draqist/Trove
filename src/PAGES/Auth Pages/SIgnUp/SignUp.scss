@@ -1,0 +1,16 @@
+.sign-up{
+    background-image: url('../../../bg-images/signin_background.80f9804d.jpg');
+    // width: 100%;
+        // background-image: url(/static/media/signin_background.80f9804d.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-attachment: fixed;
+    main{
+        display: flex;
+        padding: 3rem;
+        img{
+            width: 146px;
+        }
+    }
+}

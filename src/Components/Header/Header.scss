@@ -1,0 +1,73 @@
+.header-nav{
+    font-family: 'Montserrat';
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    //  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+     height: 3.75rem;
+     color: #BBBBBB;
+     align-items: center;
+     padding: 1rem 0;
+     .logo_image img{
+         max-width: 130px;
+     }
+    .nav_options{
+        display: flex;
+        flex-grow: 2.5;
+        margin-left: 2rem;
+        ul{
+           display: flex;
+           justify-content: space-between;
+           color: rgba(0,0,0,.5);
+            .li{
+                padding: 0 2rem;
+                margin-left: 2rem;
+                font-size: 13px;
+                font-weight: 500;
+                letter-spacing: 0;
+                color: #A2A2A2;
+                :active{
+                    color: black;
+                }
+            }
+        }
+        .btn-group{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 1.5rem;
+            .secondary {
+                a{
+                    padding: 0.75rem 1.35rem;
+                    border-radius: 0.4rem;
+                    border: 2px solid #59D882;
+                    background-color: transparent;
+                    font-size: 14px;
+                }
+                :hover{
+                    background-color: #59D882;
+                   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+                }
+            }
+            .primary{
+                a{
+
+                    margin: 0 1rem;
+                    padding: 0.8rem 1.5rem;
+                    border-radius: 0.4rem;
+                    border: 1px solid #59D882;
+                    background-color: #59D882;
+                    font-size: 14px;
+                    box-shadow: 0 8px 10px rgba(45,216,130,.3);
+                   :hover{
+                       color: #fff;
+                       background-color: #28a745;
+                       border-color: #28a745;
+                       box-shadow: none;
+                       transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+                   }
+                }
+            }
+        }
+    }
+}
