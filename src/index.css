@@ -7,6 +7,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   padding: 0;
   box-sizing: border-box;
+  text-align: left;
+  line-height: 1.5;
+
 }
 
 code {

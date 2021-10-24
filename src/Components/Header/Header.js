@@ -17,16 +17,16 @@ const Header = () => {
                         <Link to = '/Fees' className = 'li'>Fees</Link>
                     </ul>
                     <div className='btn-group'>
-                        <Link to='/' className='secondary'>
-                            <a href>
-                                Login
-                            </a> 
-                        </Link>
-                        <Link to='/signup' className='primary'>
-                            <a href>
-                                Sign up
-                            </a>
-                        </Link>
+                        <button>
+                            <Link to='/' className='secondary'>
+                                <a href> Login </a> 
+                            </Link>
+                        </button>
+                        <button>
+                            <Link to='/signup' className='primary'>
+                                <a href>  Sign up  </a>
+                            </Link>
+                        </button>
                     </div>
                </nav>
             </div>

@@ -36,6 +36,11 @@
             justify-content: center;
             align-items: center;
             margin: 0 1.5rem;
+            button{
+                outline: none;
+                background-color: transparent;
+                border: none;
+            }
             .secondary {
                 a{
                     padding: 0.75rem 1.35rem;
