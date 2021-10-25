@@ -39,39 +39,29 @@
             button{
                 outline: none;
                 background-color: transparent;
-                border: none;
             }
             .secondary {
-                a{
+                margin: 0 1rem;
+                button{
                     padding: 0.75rem 1.35rem;
                     border-radius: 0.4rem;
                     border: 2px solid #59D882;
                     background-color: transparent;
                     font-size: 14px;
-                }
-                :hover{
-                    background-color: #59D882;
-                   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+                    :hover{
+                        background-color: #59D882;
+                        transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+                    }
                 }
             }
             .primary{
-                a{
-
-                    margin: 0 1rem;
-                    padding: 0.8rem 1.5rem;
-                    border-radius: 0.4rem;
-                    border: 1px solid #59D882;
-                    background-color: #59D882;
-                    font-size: 14px;
-                    box-shadow: 0 8px 10px rgba(45,216,130,.3);
-                   :hover{
-                       color: #fff;
-                       background-color: #28a745;
-                       border-color: #28a745;
-                       box-shadow: none;
-                       transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-                   }
-                }
+                margin: 0 1rem;
+                padding: 0.8rem 1.5rem;
+                border-radius: 0.4rem;
+                border: 1px solid #59D882;
+                background-color: #59D882;
+                font-size: 14px;
+                box-shadow: 0 8px 10px rgba(45,216,130,.3); 
             }
         }
     }

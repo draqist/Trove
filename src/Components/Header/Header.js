@@ -12,20 +12,21 @@ const Header = () => {
                 <nav className = 'nav_options'>
                     <ul>
                         <Link to = '/' className = 'li'>Home</Link>
-                        <Link to='' className='li'>
-                            <a href='https://troveapp.co/blog/' target='_blank' rel = 'noreferrer'>Blog</a></Link>
+                        <a href = "https://troveapp.co/blog" target='blank' rel='noreferrer' className='li'>
+                            Blog
+                        </a>
                         <Link to = '/FAQ' className = 'li'>FAQ's</Link>
                         <Link to = '/Fees' className = 'li'>Fees</Link>
                     </ul>
                     <div className='btn-group'>
-                        <button>
-                            <Link to='/' className='secondary'>
-                                <a href> Login </a> 
-                            </Link>
-                        </button>
-                        <button>
-                            <Link to='/signup' className='primary'>
-                                <a href>  Sign up  </a>
+                        <Link to='/' className='secondary'>
+                            <button>
+                                    Login 
+                            </button>
+                        </Link>
+                        <button className = 'primary'>
+                            <Link to='/signup' className='primary-1'>
+                                  Sign up
                             </Link>
                         </button>
                     </div>

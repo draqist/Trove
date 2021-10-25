@@ -15,7 +15,7 @@ const OnboardingPage = () => {
                 <div className='hero-content'>
                     <h1> Investing Simplified </h1>
                     <p>
-                        <h2> Forget high account opnening fees. Become a global investor with the tap of a button. Invest in American, Chineese and Nigerian stocks, Bonds, ETFs and more with as little as <span></span> 1000 </h2>
+                        <> Forget high account opnening fees. Become a global investor with the tap of a button. Invest in American, Chineese and Nigerian stocks, Bonds, ETFs and more with as little as <span></span> 1000 </>
                     </p>
                 </div>
                 <div className='hero-image'>
