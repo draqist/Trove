@@ -1,27 +1,278 @@
-.login_container{
-    width: 100%;
-    display: flex;
-    height: 100vh;
-    background-color: yellow;
-    
-    .login_image{
-        display: flex;
-        background-color: green;
-        width: 50%;
-    }
-    .login_form{
-        width: 34%;
-        // display: flex;
-        background-color: #121212;
-        color: white;
-        padding:150px 120px ;
-        h3{
-            margin: 0;
-            padding-bottom: 8px;
-        }
-        input{
-            margin:3rem 0;
-            display: block;
-        }
-    }
+button{
+  outline: none;
 }
+.loader-container{
+  width: 100%;
+  height: 100vh;
+}
+  .arc {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border-bottom: 3px solid white;
+
+    @for $i from 1 through 3 {
+      color: #fdc7c7;
+      &:nth-child(#{$i}) {
+        animation: rotate#{$i} 1.15s linear infinite;
+      }
+    }
+
+    &:nth-child(1) {
+      animation-delay: -0.8s;
+    }
+
+    &:nth-child(2) {
+      animation-delay: -0.4s;
+    }
+
+    &:nth-child(3) {
+      animation-delay: 0s;
+    }
+  }
+@keyframes rotate1 {
+  from {
+    transform: rotateX(35deg) rotateY(-45deg) rotateZ(0);
+  }
+
+  to {
+    transform: rotateX(35deg) rotateY(-45deg) rotateZ(1turn);
+  }
+}
+
+@keyframes rotate2 {
+  from {
+    transform: rotateX(50deg) rotateY(10deg) rotateZ(0);
+  }
+
+  to {
+    transform: rotateX(50deg) rotateY(10deg) rotateZ(1turn);
+  }
+}
+
+@keyframes rotate3 {
+  from {
+    transform: rotateX(35deg) rotateY(55deg) rotateZ(0);
+  }
+
+  to {
+    transform: rotateX(35deg) rotateY(55deg) rotateZ(1turn);
+  }
+}
+.error{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: #F8D7DA;
+  color: black;
+  padding: 10px 0;
+  border-radius: 10px;
+  animation: alertPulse 1s ease-out;
+  animation-iteration-count: infinite;
+  opacity: 1; 
+}
+@keyframes alertPulse {
+    0% {background-color: #F8D7DA; opacity: 1;}
+    50% {opacity: #f3a1a8 ; opacity: 0.75; }
+    100% {opacity: #F8D7DA; opacity: 1;}
+}
+.sign-in{
+    p{
+        margin-top:0 ;
+        margin-bottom:1rem ;
+    }
+    main{
+        background-image: url('../../../bg-images/signin_background.80f9804d.jpg');
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: 50%;
+        background-attachment: fixed;
+        padding: 3rem;
+        .form_logo-desk{
+            margin: 0 -15px;
+        }
+        .form_container{
+            position: relative;
+            padding: 0 15px;
+        }
+        .form_header-container{
+            max-width: 26.25rem;
+            margin: auto;
+        }
+        small{
+                color: #8a939a;
+                font-size: 11px;
+                font-style: italic;
+                line-height: 0.1px;
+        }
+        }
+        img{
+            width: 146px;
+            margin-bottom: 3.125rem;
+            vertical-align: middle;
+        }
+        .form-header-info{
+            font-size: 11px;
+            line-height: 19px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: hsla(223,3%,51%,.4);
+            margin-bottom: 10px;
+            text-align: left;
+        }
+        .sign_in-title{
+            font-size: 24px;
+            line-height: 30px;
+            color: #2DD882;
+            font-weight: 700;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+        }
+        .signin_form-container{
+            max-width: 26.25rem;
+            margin: auto;
+            .signin_form-input-label{
+                font-size: 14px;
+                font-weight: 700;
+                line-height: 20px;
+                letter-spacing: .1px;
+                color: #0d0d21;
+                opacity: .5;
+                margin-bottom: 0;
+                margin-top: .8rem;
+            }
+            .signin_form-input-label-1{
+                font-size: 14px;
+                font-weight: 700;
+                line-height: 20px;
+                letter-spacing: .1px;
+                color: #0d0d21;
+                opacity: .5;
+                margin-bottom: 0;
+                margin-top: .5rem;
+            }
+            .form-input-1{
+                margin: 5px 0;
+                position: relative;
+                
+                .input_field{
+                    display: block;
+                    border: none;
+                    height: 50px;
+                    padding: 0;
+                    background: #f8f8f8;
+                    border-radius: 5px;
+                    padding-left: 3%;
+                    width: 97%;
+                    color: #000;
+                    // border-bottom: none!important;
+                    // box-shadow: none;
+                    box-sizing: content-box;
+                    margin: 0 0 0.5rem;
+                    font-size: 1rem;
+                    font-weight: 400;
+                    line-height: 1.5;
+                    outline: none;
+                    overflow: visible;
+                    :focus{
+                        border-bottom: 2px solid blue;
+                    }
+                }
+                .form-input-2{
+                    margin-bottom: 1rem !important; 
+                }
+            }
+                .referral_link{
+                    font-size: 14px;
+                    font-weight: 700;
+                    line-height: 20px;
+                    letter-spacing: .1px;
+                    color: #0d0d21;
+                    opacity: .5;
+                    cursor: pointer;
+                    font-style: italic;
+                    margin-bottom: 1rem;
+                    // to get the italic of montserrat link to add to the index.html file
+                    margin-top: 1rem;
+                }
+                .btn_signin{
+                    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);
+                    padding: .84rem 2.14rem;
+                    font-size: .81rem;
+                    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+                    border: 0;
+                    border-radius: .125rem;
+                    cursor: pointer;
+                    text-transform: uppercase;
+                    :hover{
+                      background:#209158 ;
+                    }
+                }
+                .btn_main{
+                    margin: 1.5rem 0 .75rem;
+                    width: 100%;
+                    font-weight: 700;
+                    font-size: 14px;
+                    line-height: 16px;
+                    letter-spacing: 1px;
+                    background-color: #2dd882;
+                    color: #fff;
+                }
+                .btn_secondary{
+                    width: 100%;
+                    font-weight: 700;
+                    font-size: 14px;
+                    line-height: 16px;
+                    letter-spacing: 1px;
+                    background: transparent;
+                    border:1px solid #2dd882;
+                    color: #2dd882;
+                }
+                .sign_in_in{
+                    max-width: 420px;
+                    margin: auto;
+                    font-size: 15px;
+                    line-height: 25px;
+                    font-weight: 700;
+                    color: #2dd882;
+                    margin-top: 20px;
+                    text-align: center;
+                    .font-weight-bold{
+                         span{
+                             color: #8a939a ;
+                         }
+                        font-weight: 700;
+            }
+            .sign_in_in .terms_text{
+                font-weight: 400;
+            }
+            .terms_link{
+                color: #2DD882;
+                cursor: pointer;
+                padding-left: 6px;
+                background-color: transparent;
+                :hover{
+                    transition: all .2s ease-in-out;
+                }
+            }
+        }
+        .signin_rights{
+                max-width: 420px;
+                margin: auto;
+                font-size: 12px;
+                line-height: 25px;
+                font-weight: 700;
+                color: rgba(84,86,90,.3);
+                margin-top: 80px;
+                text-align: center;
+                span{
+                    color: #2DD882;
+                }
+        }
+        }
+    }    

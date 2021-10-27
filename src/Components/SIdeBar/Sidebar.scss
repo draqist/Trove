@@ -12,16 +12,31 @@
             width: 110px;
             height: auto;
         }
-        .not{
-            width: 24px;
-            height: 24px;
-            background-image: url('../../bg-images/notifications_white_24dp.svg');
-        }
     }
     .not{
         width: 24px;
         height: 24px;
         background-image: url('../../bg-images/notifications_white_24dp.svg');
+    }
+    .not1{
+        width: 24px;
+        height: 24px;
+        background-image: url('../../bg-images/dashboard_white_24dp.svg');
+    }
+    .not2{
+        width: 24px;
+        height: 24px;
+        background-image: url('../../bg-images/account_balance_wallet_black_24dp.svg');
+    }
+    .not3{
+        width: 24px;
+        height: 24px;
+        background-image: url('../../bg-images/credit_score_black_24dp.svg');
+    }
+    .not_end{
+        width: 24px;
+        height: 24px;
+        background-image: url('../../bg-images/logout_black_24dp.svg');
     }
     .user_info-avatar{
         height: 7.8rem;

@@ -10,7 +10,7 @@ function App() {
   return (
       <div className="buzz">
         <Route path='/' exact component={OnboardingPage} />
-        <Route path = '/auth' component = {SignIn} />
+        <Route path = '/login' component = {SignIn} />
         <Route path = '/signup' component = {SignUp} />
         <Route path='/dashboard' component={ DashboardPage}/>
       </div>

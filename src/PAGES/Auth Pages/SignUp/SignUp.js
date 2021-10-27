@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
 import './SignUp.scss'
 import lozad from 'lozad'
-import { Link } from "react-router-dom";
-import { createUserWithEmailAndPassword } from 'firebase/auth'
+import { Link, useHistory } from "react-router-dom";
+import { createUserWithEmailAndPassword} from 'firebase/auth'
 import {auth} from '../../../firebase'
 
 const SignUp = () => {
@@ -12,28 +12,30 @@ const SignUp = () => {
     const [password, setPassword] = useState('')
     const [passwordconfirm, setPasswordConfirm] = useState('')
     const [error, setError] = useState('')
-    // const [loading, setLoading] = useState(false)
+    const history = useHistory()
 
-    // if (password !== passwordconfirm) {
-    //     return setError('Passwords do not match')
-    // }
-    // if (password.length <= 7) {
-    //     return setError('Password is too short')
-    // }
-    const register = async () => {
+    const handleSignUp = async () => {
         try {
+
+        if (password !== passwordconfirm) {
+            return setError('Passwords do not match')
+        }
+        if (password.length <= 7) {
+            return setError('Password is too short')
+        }
             const user = await createUserWithEmailAndPassword(auth, email, password)
             console.log(user)
+            history.replace('/dashboard')
         } catch (error) {
             console.log(error.message)
-            setError('Failed to create an account')
+            setError(error.message)
         }
-    };
+    }
 
 
     return (
             <div className='sign-up lozad'>
-                <main>
+            <main>
                     <div className='form_logo-desk'>
                         <div className = 'form_container'>
                             <div className = 'form'>
@@ -47,16 +49,7 @@ const SignUp = () => {
                                 <div className='signup_form-container'>
                                     <div className="">
                                         {error && (
-                                            <div style={{
-                                                display: 'flex',
-                                                width: '100%',
-                                                justifyContent: 'center',
-                                                alignItems: 'center',
-                                                backgroundColor: '#F8D7DA',
-                                                color: 'black',
-                                                padding: '10px 0',
-                                                borderRadius: '10px',
-                                            }}> {error} </div>
+                                            <div className = 'error' > {error} </div>
                                         )}
                                     <p className="signup_form-input-label">Email</p>
                                     <div className="signin_input">
@@ -86,12 +79,11 @@ const SignUp = () => {
                                         </div>
                                     </div>
                                 </div>
-                                {/* <p className="referral_link">Have a referral code? Click here.</p> */}
                                 <div>
-                                    <button type = 'submit' className = 'btn_signup btn_main' onClick = {register} >
+                                    <button type = 'submit' className = 'btn_signup btn_main' onClick = {handleSignUp} >
                                         Sign Up
                                     </button>
-                                    <button type = 'submit' className = 'btn_signup btn_secondary ' onClick >
+                                    <button type = 'submit' className = 'btn_signup btn_secondary' >
                                         Sign Up with Google
                                     </button>
                                     <p className="sign_up_in">
