@@ -1,17 +1,17 @@
 import React from 'react'
+import SideBarContent from '../../Components/SideBar Content/SideBarContent'
 import Sidebar from '../../Components/SIdeBar/Sidebar'
-import './Homepage.scss'
+import './Dashboard.scss'
 
 const DashboardPage = () => {
     return (
-        <div className = 'dashboard'>
-            <div className='sidebar_container'>
+            <div className = 'dashboard'>
                 <Sidebar/>
-            </div>
             <div className='main-info'>
-                
+                <SideBarContent/>
             </div>
         </div>
+
     )
 }
 

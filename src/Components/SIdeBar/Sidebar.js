@@ -14,7 +14,43 @@ const Sidebar = () => {
                     <h3> User Name </h3>
                 </div>
             </section>
-           <section className = 'side_bar-navigations'></section> 
+            <section className='side_bar-navigations'>
+                <ul>
+                    <div className='side_nav'>
+                        <div src = '../../bg-images/notifications_white_24dp.svg' alt = '' className = 'not'/>
+                        <li>Dashboard</li>
+                    </div>
+                    <div className='side_nav'>
+                        <div src = '../../bg-images/notifications_white_24dp.svg' alt = '' className = 'not'/>
+                        <li> Wallet</li>
+                    </div>
+                    <div className='side_nav'>
+                        <div src = '../../bg-images/notifications_white_24dp.svg' alt = '' className = 'not'/>
+                        <li>Loans</li>
+                    </div>
+                    <div className='side_nav'>
+                        <div src = '../../bg-images/notifications_white_24dp.svg' alt = '' className = 'not'/>
+                        <li>Loans</li>
+                    </div>
+                    <div className='side_nav'>
+                        <div src = '../../bg-images/notifications_white_24dp.svg' alt = '' className = 'not'/>
+                        <li>Loans</li>
+                    </div>
+                    <div className='side_nav'>
+
+                    </div>
+                    <div className='side_nav'>
+
+                    </div>
+                    <div className='side_nav'>
+
+                    </div>
+                    <div className='side_nav'>
+
+                    </div>
+                </ul>
+
+            </section>
         </div>
     )
 }
