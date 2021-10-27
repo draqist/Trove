@@ -11,7 +11,7 @@ const SignUp = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [passwordconfirm, setPasswordConfirm] = useState('')
-    const [error, setError] = useState()
+    const [error, setError] = useState('')
     // const [loading, setLoading] = useState(false)
 
     // if (password !== passwordconfirm) {
@@ -20,14 +20,15 @@ const SignUp = () => {
     // if (password.length <= 7) {
     //     return setError('Password is too short')
     // }
-    const handleRegister = async () => {
+    const register = async () => {
         try {
             const user = await createUserWithEmailAndPassword(auth, email, password)
             console.log(user)
         } catch (error) {
+            console.log(error.message)
             setError('Failed to create an account')
         }
-    }
+    };
 
 
     return (
@@ -87,7 +88,7 @@ const SignUp = () => {
                                 </div>
                                 {/* <p className="referral_link">Have a referral code? Click here.</p> */}
                                 <div>
-                                    <button type = 'submit' className = 'btn_signup btn_main' onClick = {handleRegister} >
+                                    <button type = 'submit' className = 'btn_signup btn_main' onClick = {register} >
                                         Sign Up
                                     </button>
                                     <button type = 'submit' className = 'btn_signup btn_secondary ' onClick >
