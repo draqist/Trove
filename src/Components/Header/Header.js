@@ -19,7 +19,7 @@ const Header = () => {
                         <Link to = '/Fees' className = 'li'>Fees</Link>
                     </ul>
                     <div className='btn-group'>
-                        <Link to='/' className='secondary'>
+                        <Link to='/login' className='secondary'>
                             <button>
                                     Login 
                             </button>
