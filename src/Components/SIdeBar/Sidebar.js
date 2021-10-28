@@ -6,7 +6,9 @@ import './Sidebar.scss'
 import logout from '../../bg-images/logout_black_24dp.svg'
 
 const Sidebar = () => {
+    // sets users name
     const [userName, setUserName] = useState('')
+    // Sets user profile photo
     const [userImage, setUserImage] = useState('')
     onAuthStateChanged(auth, (user) => {
         if (user) {
