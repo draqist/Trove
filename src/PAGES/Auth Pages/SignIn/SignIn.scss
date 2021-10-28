@@ -229,9 +229,12 @@ button{
                     font-size: 14px;
                     line-height: 16px;
                     letter-spacing: 1px;
-                    background: transparent;
+                    background: white;
                     border:1px solid #2dd882;
                     color: #2dd882;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                 }
                 .sign_in_in{
                     max-width: 420px;
@@ -274,5 +277,11 @@ button{
                     color: #2DD882;
                 }
         }
+        }
+        .google{
+          width: 24px;
+          height: 24px;
+          background-image: url('../../../bg-images/google-color.svg');
+          margin:0 10px ;
         }
     }    

@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import './SignUp.scss'
 import lozad from 'lozad'
 import { Link, useHistory } from "react-router-dom";
-import { createUserWithEmailAndPassword} from 'firebase/auth'
+import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup} from 'firebase/auth'
 import {auth} from '../../../firebase'
 
 const SignUp = () => {
@@ -14,6 +14,8 @@ const SignUp = () => {
     const [error, setError] = useState('')
     const history = useHistory()
 
+    const googleProvider = new GoogleAuthProvider();
+
     const handleSignUp = async () => {
         try {
 
@@ -24,10 +26,22 @@ const SignUp = () => {
             return setError('Password is too short')
         }
             const user = await createUserWithEmailAndPassword(auth, email, password)
+            if (user.emailVerified !== true) {
+                return setError('Email is invalid')
+            } else
+            history.replace('/dashboard')
+            console.log(user)
+        } catch (error) {
+            console.log(error.message)
+            setError(error.message)
+        }
+    }
+    const handleGoogleSignUp = async () => {
+        try {
+            const user = await signInWithPopup(auth, googleProvider)
             console.log(user)
             history.replace('/dashboard')
         } catch (error) {
-            console.log(error.message)
             setError(error.message)
         }
     }
@@ -83,7 +97,8 @@ const SignUp = () => {
                                     <button type = 'submit' className = 'btn_signup btn_main' onClick = {handleSignUp} >
                                         Sign Up
                                     </button>
-                                    <button type = 'submit' className = 'btn_signup btn_secondary' >
+                                    <button type='submit' className='btn_signup btn_secondary' onClick={handleGoogleSignUp} >
+                                        <div className = 'google'/>
                                         Sign Up with Google
                                     </button>
                                     <p className="sign_up_in">

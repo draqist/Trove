@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import './SignIn.scss'
 import lozad from 'lozad'
 import { Link, useHistory } from "react-router-dom";
-import { signInWithEmailAndPassword} from 'firebase/auth'
+import { signInWithEmailAndPassword,  signInWithPopup, GoogleAuthProvider} from 'firebase/auth'
 import {auth} from '../../../firebase'
 
 const SignIn = () => {
@@ -12,7 +12,7 @@ const SignIn = () => {
     const [loginpassword, setLoginPassword] = useState('')
     const [error, setError] = useState('')
     const history = useHistory()
-
+    const provider = new GoogleAuthProvider()
     const handleSignIn = async () => {
         try {
             const user = await signInWithEmailAndPassword(auth, loginemail, loginpassword)
@@ -20,6 +20,16 @@ const SignIn = () => {
             history.replace('/dashboard')
         } catch (error) {
             console.log(error.message)
+            setError(error.message)
+        }
+    }
+
+    const handleGoogleSignIn = async () => {
+        try {
+            const user = await signInWithPopup(auth, provider)
+            console.log(user)
+            history.replace('/dashboard')
+        } catch (error) {
             setError(error.message)
         }
     }
@@ -64,11 +74,12 @@ const SignIn = () => {
                                     <button type = 'submit' className = 'btn_signin btn_main' onClick = {handleSignIn} >
                                         Log In
                                     </button>
-                                    {/* <button type = 'submit' className = 'btn_signin btn_secondary' >
+                                    <button type='submit' className='btn_signin btn_secondary' onClick={handleGoogleSignIn}>
+                                        <div className = 'google'/>
                                         Sign In with Google
-                                    </button> */}
+                                    </button>
                                     <p className="sign_in_in">
-                                        <Link to="/signin">
+                                        <Link to="/signup">
                                             <span className="sign_in_in font-weight-bold"><span>Don't have an account?</span>  Sign up here
                                             </span>
                                         </Link>

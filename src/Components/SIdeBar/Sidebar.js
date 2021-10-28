@@ -1,10 +1,23 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
 import { auth } from '../../firebase'
-import {signOut} from 'firebase/auth'
+import {signOut, onAuthStateChanged} from 'firebase/auth'
 import './Sidebar.scss'
+import logout from '../../bg-images/logout_black_24dp.svg'
 
 const Sidebar = () => {
+    const [userName, setUserName] = useState('')
+    const [userImage, setUserImage] = useState('')
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+            if (user.displayName === null) {
+                setUserName('Stranger')
+            }else
+            setUserImage(user.photoURL)
+                setUserName(user.displayName)
+            console.log(user)
+        }
+    })
     const handleSignOut = async () => {
         await signOut(auth, )
     }
@@ -15,49 +28,53 @@ const Sidebar = () => {
                 <div className = 'not'/>
             </section>
             <section className='user_info-avatar'>
-                <div className='user_avatar' />
+                <img src = {userImage} alt = '' className='user_avatar' />
                 <div className='user_details'>
-                    <h3> User Name </h3>
+                    <h4> {userName }</h4>
                 </div>
             </section>
             <section className='side_bar-navigations'>
                 <ul>
-                    <div className='side_nav'>
-                        <div  className = 'not1'/>
-                        <li>Dashboard</li>
-                    </div>
-                    <div className='side_nav'>
-                        <div className = 'not2'/>
-                        <li> Wallet</li>
-                    </div>
-                    <div className='side_nav'>
-                        <div className = 'not3'/>
-                        <li>Loans</li>
-                    </div>
-                    <div className='side_nav'>
-                        <div className = 'not'/>
-                        <li>Loans</li>
-                    </div>
-                    <div className='side_nav'>
-                        <div className = 'not'/>
-                        <li>Loans</li>
-                    </div>
-                    <div className='side_nav'>
-
-                    </div>
-                    <div className='side_nav'>
-
-                    </div>
-                    <div className='side_nav'>
-
-                    </div>
-                    <div className='side_nav'>
-
-                    </div>
+                    <a href='/'>
+                        <div className='side_nav'>
+                            <div  className = 'not1'/>
+                            <li>Dashboard</li>
+                        </div>
+                    </a>
+                    <a href='/'>
+                        <div className='side_nav'>
+                            <div className = 'not2'/>
+                            <li> Wallet</li>
+                        </div>
+                    </a>
+                    <a href='/'>
+                        <div className='side_nav'>
+                            <div className = 'not3-1'/>
+                            <li>Assets</li>
+                        </div>
+                    </a>
+                    <a href='/'>
+                        <div className='side_nav'>
+                            <div className = 'not3'/>
+                            <li>Loans</li>
+                        </div>
+                    </a>
+                    <a href = '/'>
+                        <div className='side_nav'>
+                            <div className = 'not4'/>
+                            <li>My Portfolio</li>
+                        </div>
+                    </a>
+                    <a href='/'>
+                        <div className='side_nav'>
+                            <div className = 'not5'/>
+                            <li>Settings</li>
+                        </div>
+                    </a>
                 </ul>
 
-                <p style={{ display : 'flex'}}>
-                    <div className='not_end' />
+                <p style={{ display: 'flex', margin: '12px 1.3rem 1rem', alignItems: 'center', marginTop: '3.5rem'}}>
+                    <img src = {logout} className='not_end' alt = '' />
                     <Link to = '/'>
                         <button onClick = {handleSignOut}>
                             Sign Out

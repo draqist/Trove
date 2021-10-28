@@ -1,16 +1,28 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './sidebarcontent.scss'
+import { onAuthStateChanged } from 'firebase/auth'
+import { auth } from '../../firebase'
 
 const portValue = '10,000'
-const UserName = 'Abdullah'
+
 const SideBarContent = () => {
+    const [userName, setUserName] = useState('')
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+            if (user.displayName === null) {
+                setUserName('Stranger')
+            }else
+            setUserName(user.displayName)
+            console.log(user)
+        }
+    })
     return (
         <>
             <section className='dashboard_content'>
-                <div style = {{border: '2px solid rgba(0,0,0,.04)', marginBottom: '2rem', borderRadius: '10px'}}>
+                <div style = {{border: '2px solid rgba(0,0,0,.1)', marginBottom: '2rem', borderRadius: '10px'}}>
                     <div className='Header_section'>
                         <div className='Header_title '>
-                                <h1> Hello { UserName },</h1>
+                                <h1> Hello { userName }</h1>
                                 <span> Happy trading!!</span>
                             </div>
                             <div className='Header_portfolio shadow-4dp'>

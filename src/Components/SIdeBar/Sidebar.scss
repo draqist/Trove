@@ -1,6 +1,14 @@
 .sidebar_container-main{
     width: 15.5rem;
     background-color:  #031037;
+    button{
+        background-color: transparent;
+        outline: none;
+        border: none;
+        color: white;
+        font-size: 1rem;
+        font-family: inherit;
+    }
     .dashboardlogo_notifications{
         width: 100%;
         z-index: 100;
@@ -33,10 +41,25 @@
         height: 24px;
         background-image: url('../../bg-images/credit_score_black_24dp.svg');
     }
+    .not3-1{
+        width: 24px;
+        height: 24px;
+        background-image: url('../../bg-images/analytics_black_24dp.svg');
+    }
+    .not4{
+        width: 24px;
+        height: 24px;
+        background-image: url('../../bg-images/lightbulb_black_24dp.svg');
+    }
+    .not5{
+        width: 24px;
+        height: 24px;
+        background-image: url('../../bg-images/settings_black_24dp.svg');
+    }
     .not_end{
         width: 24px;
         height: 24px;
-        background-image: url('../../bg-images/logout_black_24dp.svg');
+        // background-image: url('../../bg-images/logout_black_24dp.svg');
     }
     .user_info-avatar{
         height: 7.8rem;
@@ -51,14 +74,15 @@
             width: 2.75rem;
             height: 2.75rem;
             border-radius: 50%;
-            background-color: white;
+            // background-color: white;
         }
         .user_details{
             // margin-left: -3rem;
-            h3{
+            h4{
                 margin-bottom: 0;
                 margin-top: 0;
                 color: wheat;
+                padding-right: 4px;
             }
         }
     }
@@ -69,15 +93,23 @@
             display: flex;
             align-items: center;
             text-align: left;
-            margin: 12px 1.3rem;
+            margin: 12px 1.3rem 1rem;
             
+            li{
+                color: white;
+                padding: 5px 1rem;
+                transition: background-color .3s;
+                cursor: pointer;
+                :hover{
+                        color: #fff;
+                        background: hsla(0,0%,100%,.1);
+                        text-decoration: none;
+                }
+            }
         }
         ul{
             padding: 0;
-        }
-        li{
-            color: white;
-            padding: 5px 1rem;
+            margin-top: -1rem;
         }
     }
 }
