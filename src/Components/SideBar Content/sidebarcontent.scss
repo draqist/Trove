@@ -1,18 +1,18 @@
 .dashboard_content{
-    padding: 2.5rem 1.5rem 0;
+    padding: 0 1.5rem;
     .Header_section{
         display: flex;
         justify-content: space-between;
         padding: 0 2rem;
         align-items: center;
-        margin: 1.4rem 0 1.2rem;
-        padding-bottom: 1rem;
-        padding-top: 1rem;
+        margin: 1rem 0 1.2rem;
+        padding-bottom: .5rem;
+        padding-top: .75rem;
         .Header_title{
-            color: #2DD882;
+            color: #031037;
             font-weight: 700;
             font-size: 1.75rem;
-            h1{
+            h3{
                 margin-bottom: 0;
                 line-height: 1.5rem;
             }
@@ -25,25 +25,31 @@
             
         }
         .Header_portfolio{
-            width: 250px;
-            height: 11rem;
+            width: 280px;
+            height: 9rem;
             border: 2px solid rgba(0,0,0,.25);   
             border-radius: 8px;
             padding: 0 1.5rem;
             color: #2DD882;
-            font-weight: 700;
+            // font-style: italic;
+            background-color: #DFFAE5;
+            h4{
+                font-weight: 700;
+                margin: 16px 0;
+
+            }
             
         }
         .shadow-4dp {
              box-shadow: 0 3px 3px 0 rgba(0,0,0,.14), 0 3px -2px 0 rgba(0,0,0,.2), 0 1px 8px 0px rgba(0,0,0,.12)
             }
     }
-        .text_dummy{
-        position: relative;
-        color: red;
-        font-weight: 500;
-        text-align: justify;
-        margin: 0 2.1rem;
+        .trending_stocks{
+            .t_stocks{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
     }
     
 }
