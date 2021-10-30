@@ -1,9 +1,10 @@
 import React, {useState} from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { auth } from '../../firebase'
 import {signOut, onAuthStateChanged} from 'firebase/auth'
 import './Sidebar.scss'
 import logout from '../../bg-images/logout_black_24dp.svg'
+
 
 const Sidebar = () => {
     // sets users name
@@ -23,6 +24,7 @@ const Sidebar = () => {
     const handleSignOut = async () => {
         await signOut(auth, )
     }
+
     return (
         <div className = 'sidebar_container-main'>
             <section className='dashboardlogo_notifications'>
@@ -37,42 +39,47 @@ const Sidebar = () => {
             </section>
             <section className='side_bar-navigations'>
                 <ul>
-                    <a href='/'>
+                    <NavLink activeClassName activeStyle={{
+                        borderLeft: '3px solid white',
+                        backgroundColor: '#1A1A4B',
+                        display: 'flex',
+
+                    }} to='/dashboard'>
                         <div className='side_nav'>
                             <div  className = 'not1'/>
                             <li>Dashboard</li>
                         </div>
-                    </a>
-                    <a href='/'>
+                    </NavLink>
+                    <NavLink to='/wallet' >
                         <div className='side_nav'>
                             <div className = 'not2'/>
                             <li> Wallet</li>
                         </div>
-                    </a>
-                    <a href='/'>
+                    </NavLink>
+                    <NavLink to='/assets'>
                         <div className='side_nav'>
                             <div className = 'not3-1'/>
                             <li>Assets</li>
                         </div>
-                    </a>
-                    <a href='/'>
+                    </NavLink>
+                    <NavLink to='/loans'>
                         <div className='side_nav'>
                             <div className = 'not3'/>
                             <li>Loans</li>
                         </div>
-                    </a>
-                    <a href = '/'>
+                    </NavLink>
+                    <NavLink to = '/portfolio'>
                         <div className='side_nav'>
                             <div className = 'not4'/>
                             <li>My Portfolio</li>
                         </div>
-                    </a>
-                    <a href='/'>
+                    </NavLink>
+                    <NavLink to='/' >
                         <div className='side_nav'>
                             <div className = 'not5'/>
                             <li>Settings</li>
                         </div>
-                    </a>
+                    </NavLink>
                 </ul>
 
                 <p style={{ display: 'flex', margin: '12px 1.3rem 1rem', alignItems: 'center', marginTop: '3.5rem'}}>

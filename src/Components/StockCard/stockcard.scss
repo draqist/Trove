@@ -1,6 +1,50 @@
 .s-card{
-    width: 230px;
-    height: 240px;
-    border: 2px solid black;
+    width: 198.35px;
+    height: 260px;
     border-radius: 10px;
+    background-color: #f8f8f8e7;
+    margin-right: 11px;
+    margin-bottom: 1.5rem;
+    h4{
+        padding-left:8px;
+        font-size: 14.5px;
+        font-weight: 400;
+        margin: 7px 0 0px;
+    }
+    h5{
+        padding-left:8px;
+        margin: 0 0;
+        padding-bottom: 3px;
+        font-weight: 600;
+        color: #031037;
+    }
+    .stockimage_desk{
+        display: flex;
+        justify-content: center;
+        align-items: center ;
+    }
+    .stocklogo{
+        width: 170px;
+        height: 160px;
+        // background-position: center;
+        justify-content: center;
+        // background-size: 80%;
+    }
+    .prices{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 6px;
+        text-align: center;
+
+        h5{
+            padding-right: 5px;
+            margin: 0 0;
+            padding-bottom: 0;
+            line-height: 1.25;
+        }
+        span{
+            font-size: .83em;
+        }
+    }
 }

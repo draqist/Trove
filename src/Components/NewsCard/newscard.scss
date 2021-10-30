@@ -1,0 +1,24 @@
+.news-card{
+    width: 13.875rem;
+    height: 13rem;
+    margin: 8px 0;
+    margin-right: 10px;
+    background-color: #f8f8f8e7;
+    text-align: left;
+    border-radius: 10px;
+    .news_thumbnail{
+        width: 13.875rem;
+        height: 7.625rem;
+        border-top-right-radius: 10px ;
+        border-top-left-radius: 10px ;
+    }
+    a{
+        color: #031037;
+    }
+    h4{
+        margin: 0 0;
+        font-size: .65em;
+        // font-weight: bold;
+        padding: 0 6px;
+    }
+}

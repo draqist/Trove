@@ -1,11 +1,13 @@
 .dashboard_content{
     padding: 0 1.5rem;
+    background-color: #F8FAFD;
     .Header_section{
         display: flex;
         justify-content: space-between;
         padding: 0 2rem;
         align-items: center;
-        margin: 1rem 0 1.2rem;
+        // background-color: white;
+        margin: 1.75rem 0 1.7rem;
         padding-bottom: .5rem;
         padding-top: .75rem;
         .Header_title{
@@ -45,11 +47,41 @@
             }
     }
         .trending_stocks{
+            padding-top: .5rem;
             .t_stocks{
                 display: flex;
                 align-items: center;
-                justify-content: space-between;
+                flex-wrap: wrap;
             }
     }
-    
+    .market_news{
+        // margin-top: 2px;
+        h2{
+            padding-top: 10px;
+            margin-bottom: 6px;
+        }
+        .m-news{
+            display: flex;
+            align-items: center;
+            flex-wrap: nowrap;
+            overflow-x: scroll;
+            overflow-y: hidden;
+        }
+        margin-bottom: 10px;
+        ::-webkit-scrollbar {
+                width: 4px;
+                }}
+            ::-webkit-scrollbar-track {
+            background-color: transparent;
+            }
+
+            ::-webkit-scrollbar-thumb {
+            background-color: #d6dee1;
+            border-radius: 20px;
+            border: 2px solid transparent;
+}
+            ::-webkit-scrollbar-thumb:hover {
+            background-color: #a8bbbf;
+            }
+
 }

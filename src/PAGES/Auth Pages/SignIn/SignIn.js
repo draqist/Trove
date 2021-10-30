@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import './SignIn.scss'
 import lozad from 'lozad'
 import { Link, useHistory } from "react-router-dom";
-import { signInWithEmailAndPassword,  signInWithPopup, GoogleAuthProvider} from 'firebase/auth'
+import { signInWithEmailAndPassword,  signInWithPopup, signInWithRedirect, GoogleAuthProvider} from 'firebase/auth'
 import {auth} from '../../../firebase'
 
 const SignIn = () => {
@@ -25,12 +25,22 @@ const SignIn = () => {
     }
 
     const handleGoogleSignIn = async () => {
-        try {
-            const user = await signInWithPopup(auth, provider)
-            console.log(user)
-            history.replace('/dashboard')
-        } catch (error) {
-            setError(error.message)
+        if (window.screen < 400) {
+            try {
+                const user = await signInWithRedirect(auth, provider)
+                console.log(user)
+                history.replace('/dashboard')
+            } catch(error) {
+                setError(error.message)
+            }
+        } else {
+            try {
+                const user = await signInWithPopup(auth, provider)
+                console.log(user)
+                history.replace('/dashboard')
+            } catch (error) {
+                setError(error.message)
+            }
         }
     }
 
