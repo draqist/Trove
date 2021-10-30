@@ -34,7 +34,7 @@ const SettingsPage = () => {
     const NewpasswordSetter = async () => {
         try {
              await sendPasswordResetEmail(auth, email)
-            setResponse('Password Reset Link Sent')
+            setResponse('Password Reset Link Sent, Kindly check your email')
         } catch (error){
             setError(error.message)
             console.log(error)
