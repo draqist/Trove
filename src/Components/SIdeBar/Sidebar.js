@@ -18,11 +18,10 @@ const Sidebar = () => {
             }else
             setUserImage(user.photoURL)
                 setUserName(user.displayName)
-            console.log(user)
         }
     })
     const handleSignOut = async () => {
-        await signOut(auth, )
+        await signOut(auth)
     }
 
     return (
@@ -39,7 +38,7 @@ const Sidebar = () => {
             </section>
             <section className='side_bar-navigations'>
                 <ul>
-                    <NavLink activeClassName activeStyle={{
+                    <NavLink activeClassName = 'selected' activeStyle={{
                         borderLeft: '3px solid white',
                         backgroundColor: '#1A1A4B',
                         display: 'flex',
@@ -56,25 +55,43 @@ const Sidebar = () => {
                             <li> Wallet</li>
                         </div>
                     </NavLink>
-                    <NavLink to='/assets'>
+                    <NavLink activeClassName = 'selected' activeStyle={{
+                        borderLeft: '3px solid white',
+                        backgroundColor: '#1A1A4B',
+                        display: 'flex',
+                    }} to='/assets'>
                         <div className='side_nav'>
                             <div className = 'not3-1'/>
                             <li>Assets</li>
                         </div>
                     </NavLink>
-                    <NavLink to='/loans'>
+                    <NavLink activeClassName = 'selected' activeStyle={{
+                        borderLeft: '3px solid white',
+                        backgroundColor: '#1A1A4B',
+                        display: 'flex',
+                    }} to='/loans'>
                         <div className='side_nav'>
                             <div className = 'not3'/>
                             <li>Loans</li>
                         </div>
                     </NavLink>
-                    <NavLink to = '/portfolio'>
+                    <NavLink activeClassName = 'selected' activeStyle={{
+                        borderLeft: '3px solid white',
+                        backgroundColor: '#1A1A4B',
+                        display: 'flex',
+                    }} to = '/portfolio'>
                         <div className='side_nav'>
                             <div className = 'not4'/>
                             <li>My Portfolio</li>
                         </div>
                     </NavLink>
-                    <NavLink to='/' >
+                    <NavLink activeClassName = 'selected' activeStyle={{
+                        borderLeft: '3px solid white',
+                        backgroundColor: '#1A1A4B',
+                        display: 'flex',
+                        padding: '0',
+                        margin: '0',
+                    }} to='/settings' >
                         <div className='side_nav'>
                             <div className = 'not5'/>
                             <li>Settings</li>
@@ -82,7 +99,7 @@ const Sidebar = () => {
                     </NavLink>
                 </ul>
 
-                <p style={{ display: 'flex', margin: '12px 1.3rem 1rem', alignItems: 'center', marginTop: '3.5rem'}}>
+                <p style={{ display: 'flex', margin: '12px 1.3rem 1rem', alignItems: 'center', marginTop: '3rem'}}>
                     <img src = {logout} className='not_end' alt = '' />
                     <Link to = '/'>
                         <button onClick = {handleSignOut}>

@@ -1,0 +1,47 @@
+.portfolio-page{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    background-color: #F8FAFD;
+    .portfolio_content{
+        width: 70rem;
+        height: 100%;
+        overflow-y: scroll;
+    }
+    .portfolio-header{
+            background-color: white;
+            border-radius:10px ;
+            padding-bottom: 1rem;
+            margin: 0 2rem;
+            // height: 16rem;
+        h2{
+            margin: .83rem 1rem 0;
+        }
+        span{
+            margin: .83rem 1rem 0;
+            font-size: 13px;
+            color: grey;
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+
+        }
+        .portfolio-cards{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            .p_value{
+                width: 20rem;
+                height: 9.75rem;
+                margin: 1rem 0;
+                border: 1px solid black;
+                border-radius: 8px;
+                h4{
+                    margin: .75em 10px .83em;
+                    color: #A9ABBE;
+                }
+
+            }
+        }
+    }
+}

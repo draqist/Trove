@@ -30,7 +30,6 @@ const SignUp = () => {
                 return setError('Email is invalid')
             } else
             history.replace('/dashboard')
-            console.log(user)
         } catch (error) {
             console.log(error.message)
             setError(error.message)
@@ -38,8 +37,7 @@ const SignUp = () => {
     }
     const handleGoogleSignUp = async () => {
         try {
-            const user = await signInWithPopup(auth, googleProvider)
-            console.log(user)
+            await signInWithPopup(auth, googleProvider)
             history.replace('/dashboard')
         } catch (error) {
             setError(error.message)

@@ -15,8 +15,7 @@ const SignIn = () => {
     const provider = new GoogleAuthProvider()
     const handleSignIn = async () => {
         try {
-            const user = await signInWithEmailAndPassword(auth, loginemail, loginpassword)
-            console.log(user)
+            await signInWithEmailAndPassword(auth, loginemail, loginpassword)
             history.replace('/dashboard')
         } catch (error) {
             console.log(error.message)
@@ -27,16 +26,14 @@ const SignIn = () => {
     const handleGoogleSignIn = async () => {
         if (window.screen < 400) {
             try {
-                const user = await signInWithRedirect(auth, provider)
-                console.log(user)
+                await signInWithRedirect(auth, provider)
                 history.replace('/dashboard')
             } catch(error) {
                 setError(error.message)
             }
         } else {
             try {
-                const user = await signInWithPopup(auth, provider)
-                console.log(user)
+                await signInWithPopup(auth, provider)
                 history.replace('/dashboard')
             } catch (error) {
                 setError(error.message)

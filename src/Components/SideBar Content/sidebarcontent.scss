@@ -1,6 +1,7 @@
 .dashboard_content{
     padding: 0 1.5rem;
     background-color: #F8FAFD;
+    overflow: hidden;
     .Header_section{
         display: flex;
         justify-content: space-between;
@@ -48,6 +49,7 @@
     }
         .trending_stocks{
             padding-top: .5rem;
+            color: #031037;
             .t_stocks{
                 display: flex;
                 align-items: center;
@@ -59,6 +61,7 @@
         h2{
             padding-top: 10px;
             margin-bottom: 6px;
+            color:#031037;
         }
         .m-news{
             display: flex;

@@ -16,7 +16,6 @@ const SideBarContent = () => {
                 setUserName('Stranger')
             }else
             setUserName(user.displayName)
-            console.log(user)
         }
     })
     return (

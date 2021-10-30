@@ -1,0 +1,138 @@
+.settings_page{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    background-color: #F8FAFD;
+    .settings_content{
+        overflow-y: scroll;
+        width: 70rem;
+        height: 100%;
+        h1{
+            margin: 1rem 33%;
+            text-align: center;
+            color: #031037;
+        }
+        .profile_settings{
+            background-color: white;
+            border-radius:10px ;
+            padding-top: 1.5rem;
+            padding-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            margin: 0 2rem;
+            
+            .form-field{
+                label{
+                    font-weight: 500;
+                    margin: 1.2rem 0;
+                }
+            }
+            .input-field{
+                background-color: white;
+                border: 1px solid white;
+                border-radius: 10px;
+                height: 2.5rem;
+                input{
+                    width: 20rem;
+                    height: 2.5rem;
+                    background-color: #F8F8F8;
+                    border: none;
+                    outline: none;
+                    padding: 0 .5rem;
+                    font-size: 1rem;
+                    font-family: 'Montserrat';
+                    font-weight: 500;
+                    color: #031037;
+                }
+            }
+        }
+    }
+        .password_settings{
+            background-color: white;
+            border-radius: 10px;
+            padding-top: 1.5rem;
+            align-items: center;
+            justify-content: space-around;
+            margin: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            
+            .form-field{
+                label{
+                    font-weight: 500;
+                    margin: 1.2rem 0;
+                }
+            }
+            .input-field{
+                margin: 0rem 0 1.5rem;
+                background-color: #F8F8F8;
+                border: 1px solid white;
+                border-radius: 10px;
+                height: 2.5rem;
+                display: flex;
+                justify-content: flex-start;
+                input{
+                    width: 20rem;
+                    height: 2.5rem;
+                    background-color: #F8F8F8;
+                    border: none;
+                    outline: none;
+                    padding: 0 .5rem;
+                    font-size: 1rem;
+                    font-family: 'Montserrat';
+                    font-weight: 500;
+                    color: #031037;
+                }
+            }
+        }
+        .password-update{
+            border: none;
+            outline: none;
+            margin: 0 0 1rem;
+            padding: 1rem 5rem;
+            border-radius: 8px ;
+            background-color: #5AD882;
+            cursor: pointer;
+        }
+    }
+.error{
+  display: flex;
+  width: 70%;
+  margin: 1rem 13%;
+  justify-content: center;
+  align-items: center;
+  background-color: #F8D7DA;
+  color: black;
+  padding: 10px 0;
+  border-radius: 10px;
+  animation: alertPulse 1s ease-out;
+  animation-iteration-count: infinite;
+  opacity: 1; 
+}
+@keyframes alertPulse {
+    0% {background-color: #F8D7DA; opacity: 1;}
+    50% {opacity: #f3a1a8 ; opacity: 0.75; }
+    100% {opacity: #F8D7DA; opacity: 1;}
+}
+.success{
+  display: flex;
+  width: 70%;
+  margin: 1rem 13%;
+  justify-content: center;
+  align-items: center;
+  background-color: #5AD882;
+  color: black;
+  padding: 10px 0;
+  border-radius: 10px;
+  animation: alertPulse1 1s ease-out;
+  animation-iteration-count: infinite;
+  opacity: 1; 
+}
+@keyframes alertPulse1 {
+    0% {background-color: #5AD882; opacity: 1;}
+    50% {opacity: #9eeeb7 ; opacity: 0.75; }
+    100% {opacity: #5AD882; opacity: 1;}
+}
