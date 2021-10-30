@@ -45,7 +45,7 @@ const SettingsPage = () => {
                  <Sidebar />
             <div className='settings_content'>
                      {error && (
-                         <div className='error' >
+                         <div className='error1' >
                              {error}
                          </div>
                      )}
