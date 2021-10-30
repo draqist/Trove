@@ -1,163 +1,163 @@
-const Portfolio = [
-  {
-    symbol: "AAPL",
-    totalQuantity: 20,
-    equityValue: 2500.0,
-    pricePerShare: 125.0,
-  },
-  {
-    symbol: "TSLA",
-    totalQuantity: 5.0,
-    equityValue: 3000.0,
-    pricePerShare: 600.0,
-  },
-  {
-    symbol: "AMZN",
-    totalQuantity: 1.38461538,
-    equityValue: 4500.0,
-    pricePerShare: 150.0,
-  },
-  {
+// const Portfolio = [
+//   {
+//     symbol: "AAPL",
+//     totalQuantity: 20,
+//     equityValue: 2500.0,
+//     pricePerShare: 125.0,
+//   },
+//   {
+//     symbol: "TSLA",
+//     totalQuantity: 5.0,
+//     equityValue: 3000.0,
+//     pricePerShare: 600.0,
+//   },
+//   {
+//     symbol: "AMZN",
+//     totalQuantity: 1.38461538,
+//     equityValue: 4500.0,
+//     pricePerShare: 150.0,
+//   },
+//   {
 
-  "exchangeRate": {
-    "buy": 577,
-    "sell": 560,
-    "base": 560,
-    "currency": "USD"
-  },
-  "fees": {
-    "NGN": {
-      "id": "stocks-ngn",
-      "currency": "NGN",
-      "buy": {
-        "limit": 100000,
-        "processing_percent": 0,
-        "processing_flat": 0,
-        "processing_max": 0,
-        "discount_percent": 0,
-        "discount_flat": 0,
-        "percent": 2.34875,
-        "max_fee": 0,
-        "flat": 4.2
-      },
-      "sell": {
-        "limit": 0,
-        "processing_percent": 0,
-        "processing_flat": 0,
-        "processing_max": 0,
-        "discount_percent": 0,
-        "discount_flat": 0,
-        "percent": 2.14875,
-        "max_fee": 0,
-        "flat": 4.2
-      }
-    },
-    "USD": {
-      "id": "stocks-usd",
-      "currency": "USD",
-      "symbol": "$",
-      "buy": {
-        "limit": 2500,
-        "processing_percent": 0,
-        "processing_flat": 0,
-        "processing_max": 0,
-        "discount_percent": 0,
-        "discount_flat": 0,
-        "percent": 1,
-        "max_fee": 0,
-        "min_fee": 0,
-        "flat": 0
-      },
-      "sell": {
-        "limit": 2500,
-        "processing_percent": 0,
-        "processing_flat": 0,
-        "processing_max": 0,
-        "discount_percent": 0,
-        "discount_flat": 0,
-        "percent": 1,
-        "max_fee": 0,
-        "min_fee": 0,
-        "flat": 0
-      }
-    },
-    "CRYPTO": {
-      "id": "crypto-ngn",
-      "currency": "NGN",
-      "buy": {
-        "limit": 100000,
-        "processing_percent": 0,
-        "processing_flat": 0,
-        "processing_max": 0,
-        "discount_percent": 0,
-        "discount_flat": 0,
-        "percent": 1,
-        "max_fee": 0,
-        "flat": 0
-      },
-      "buy_limit": {
-        "limit": 100000,
-        "processing_percent": 0,
-        "processing_flat": 0,
-        "processing_max": 0,
-        "discount_percent": 0,
-        "discount_flat": 0,
-        "percent": 0.35,
-        "max_fee": 0,
-        "flat": 0
-      },
-      "sell": {
-        "limit": 100000,
-        "processing_percent": 0,
-        "processing_flat": 0,
-        "processing_max": 0,
-        "discount_percent": 0,
-        "discount_flat": 0,
-        "percent": 1,
-        "max_fee": 0,
-        "flat": 0
-      },
-      "sell_limit": {
-        "limit": 100000,
-        "processing_percent": 0,
-        "processing_flat": 0,
-        "processing_max": 0,
-        "discount_percent": 0,
-        "discount_flat": 0,
-        "percent": 0.35,
-        "max_fee": 0,
-        "flat": 0
-      }
-    },
-    "FIXED_INCOME": {
-      "id": "bonds-ngn",
-      "currency": "NGN",
-      "buy": {
-        "limit": 100000,
-        "processing_percent": 0,
-        "processing_flat": 0,
-        "processing_max": 0,
-        "discount_percent": 0,
-        "discount_flat": 0,
-        "percent": 0,
-        "max_fee": 0,
-        "flat": 0
-      },
-      "sell": {
-        "limit": 100000,
-        "processing_percent": 0,
-        "processing_flat": 0,
-        "processing_max": 0,
-        "discount_percent": 0,
-        "discount_flat": 0,
-        "percent": 0,
-        "max_fee": 0,
-        "flat": 0
-      }
-    }
-  }
-}
-];
+//   "exchangeRate": {
+//     "buy": 577,
+//     "sell": 560,
+//     "base": 560,
+//     "currency": "USD"
+//   },
+//   "fees": {
+//     "NGN": {
+//       "id": "stocks-ngn",
+//       "currency": "NGN",
+//       "buy": {
+//         "limit": 100000,
+//         "processing_percent": 0,
+//         "processing_flat": 0,
+//         "processing_max": 0,
+//         "discount_percent": 0,
+//         "discount_flat": 0,
+//         "percent": 2.34875,
+//         "max_fee": 0,
+//         "flat": 4.2
+//       },
+//       "sell": {
+//         "limit": 0,
+//         "processing_percent": 0,
+//         "processing_flat": 0,
+//         "processing_max": 0,
+//         "discount_percent": 0,
+//         "discount_flat": 0,
+//         "percent": 2.14875,
+//         "max_fee": 0,
+//         "flat": 4.2
+//       }
+//     },
+//     "USD": {
+//       "id": "stocks-usd",
+//       "currency": "USD",
+//       "symbol": "$",
+//       "buy": {
+//         "limit": 2500,
+//         "processing_percent": 0,
+//         "processing_flat": 0,
+//         "processing_max": 0,
+//         "discount_percent": 0,
+//         "discount_flat": 0,
+//         "percent": 1,
+//         "max_fee": 0,
+//         "min_fee": 0,
+//         "flat": 0
+//       },
+//       "sell": {
+//         "limit": 2500,
+//         "processing_percent": 0,
+//         "processing_flat": 0,
+//         "processing_max": 0,
+//         "discount_percent": 0,
+//         "discount_flat": 0,
+//         "percent": 1,
+//         "max_fee": 0,
+//         "min_fee": 0,
+//         "flat": 0
+//       }
+//     },
+//     "CRYPTO": {
+//       "id": "crypto-ngn",
+//       "currency": "NGN",
+//       "buy": {
+//         "limit": 100000,
+//         "processing_percent": 0,
+//         "processing_flat": 0,
+//         "processing_max": 0,
+//         "discount_percent": 0,
+//         "discount_flat": 0,
+//         "percent": 1,
+//         "max_fee": 0,
+//         "flat": 0
+//       },
+//       "buy_limit": {
+//         "limit": 100000,
+//         "processing_percent": 0,
+//         "processing_flat": 0,
+//         "processing_max": 0,
+//         "discount_percent": 0,
+//         "discount_flat": 0,
+//         "percent": 0.35,
+//         "max_fee": 0,
+//         "flat": 0
+//       },
+//       "sell": {
+//         "limit": 100000,
+//         "processing_percent": 0,
+//         "processing_flat": 0,
+//         "processing_max": 0,
+//         "discount_percent": 0,
+//         "discount_flat": 0,
+//         "percent": 1,
+//         "max_fee": 0,
+//         "flat": 0
+//       },
+//       "sell_limit": {
+//         "limit": 100000,
+//         "processing_percent": 0,
+//         "processing_flat": 0,
+//         "processing_max": 0,
+//         "discount_percent": 0,
+//         "discount_flat": 0,
+//         "percent": 0.35,
+//         "max_fee": 0,
+//         "flat": 0
+//       }
+//     },
+//     "FIXED_INCOME": {
+//       "id": "bonds-ngn",
+//       "currency": "NGN",
+//       "buy": {
+//         "limit": 100000,
+//         "processing_percent": 0,
+//         "processing_flat": 0,
+//         "processing_max": 0,
+//         "discount_percent": 0,
+//         "discount_flat": 0,
+//         "percent": 0,
+//         "max_fee": 0,
+//         "flat": 0
+//       },
+//       "sell": {
+//         "limit": 100000,
+//         "processing_percent": 0,
+//         "processing_flat": 0,
+//         "processing_max": 0,
+//         "discount_percent": 0,
+//         "discount_flat": 0,
+//         "percent": 0,
+//         "max_fee": 0,
+//         "flat": 0
+//       }
+//     }
+//   }
+// }
+// ];
 export const data = {
     "trending": [
       {
