@@ -22,9 +22,6 @@ const OnboardingPage = () => {
                     <img className = 'hero_image lozad' loading = 'lazy' src = 'https://troveapp.co/assets/images/banner-image.png' alt = ''/>
                 </div>
             </main>
-            <section></section>
-            <section></section>
-            <section></section>
         </div>
     )
 }
