@@ -6,7 +6,9 @@ import './Dashboard.scss'
 const DashboardPage = () => {
     return (
             <div className = 'dashboard'>
-                <Sidebar/>
+                <div className = 'sidebar_desk'>
+                    <Sidebar/>
+                </div>
             <div className='main-info'>
                 <SideBarContent/>
             </div>

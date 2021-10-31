@@ -88,3 +88,11 @@
             }
 
 }
+ @media screen and (max-width: 1024px) {
+        .t_stocks{
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                justify-content: space-around;
+            }
+    }

@@ -13,9 +13,9 @@ const StockCard = ({image, name, price,  percChange, prevClose, symbol}) => {
            </div>
             <div className='prices'>
                 <h5 > $ {price} </h5>
-                <div style = {{}}>
+                <div style = {{display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '0'}}>
                     <h5> {(price - prevClose).toFixed(2)}</h5>
-                    <h5> { percChange } </h5>
+                    <h5>({ percChange })  </h5>
                 </div>
             </div>
         </div>

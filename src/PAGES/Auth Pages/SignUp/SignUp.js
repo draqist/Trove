@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import './SignUp.scss'
 import lozad from 'lozad'
 import { Link, useHistory } from "react-router-dom";
-import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup} from 'firebase/auth'
+import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, sendEmailVerification} from 'firebase/auth'
 import {auth} from '../../../firebase'
 
 const SignUp = () => {
@@ -24,11 +24,8 @@ const SignUp = () => {
         }
         if (password.length <= 7) {
             return setError('Password is too short')
-        }
-            const user = await createUserWithEmailAndPassword(auth, email, password)
-            if (user.emailVerified !== true) {
-                return setError('Email is invalid')
-            } else
+            }
+            await createUserWithEmailAndPassword(auth, email, password)
             history.replace('/dashboard')
         } catch (error) {
             console.log(error.message)
@@ -39,6 +36,8 @@ const SignUp = () => {
         try {
             await signInWithPopup(auth, googleProvider)
             history.replace('/dashboard')
+            await sendEmailVerification(auth.currentUser)
+            alert('Verification Email has been sent')
         } catch (error) {
             setError(error.message)
         }

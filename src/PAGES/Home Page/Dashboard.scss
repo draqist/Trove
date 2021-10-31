@@ -4,9 +4,20 @@
     display: flex;
     height: 100vh;
     justify-content: space-between;
+    .sidebar_desk{
+        height: 100vh;
+    }
     .main-info{
         overflow-y: scroll;
         width: 70rem;
         height: 100%;
+    }
+     @media screen and (max-width: 1024px) {
+        .sidebar_desk{
+            display: none;
+        }
+        .main-info{
+            width: 100%;
+        }
     }
 }

@@ -63,18 +63,44 @@
         }
     }
 }
- @media screen and (max-width: 1024px ){
+@media screen and (min-width: 801px) {
+    .get-st{
+        display: none;
+    }
+    .btn-desk{
+        display: none;
+    }
+}
+ @media screen and (max-width: 800px ){
         .onboarding-header{
         margin: 0 0
     }
     .hero-content{
         h1{
             font-size: 2rem;
+            color: #0D0D21;
+            line-height:50px;
+            margin-top: 2rem;
+            vertical-align:baseline;
+            letter-spacing:1px;
+            word-spacing:0px;
+            font-weight: 900;
+            font-family: 'Times New Roman', Times, serif;
+            margin-top: 0;
+        }
+        .get-st{
+            display: flex;
+            border: none;
+            outline: none;
+            margin: 0 0 1rem;
+            padding: 1rem 5rem;
+            border-radius: 8px ;
+            background-color: #5AD882;
+            cursor: pointer;
+            color: white;
         }
     }
     .hero-image{
-        img{
-        }
         display: none;
         background-image: url('../../bg-images/signin_background.80f9804d.jpg');
     }

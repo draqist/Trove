@@ -26,22 +26,19 @@
     .stocklogo{
         width: 170px;
         height: 160px;
-        // background-position: center;
         justify-content: center;
-        // background-size: 80%;
     }
     .prices{
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 10px 6px;
+        padding: 1rem 6px 0;
         text-align: center;
 
         h5{
-            padding-right: 5px;
+            // padding-right: 1px;
             margin: 0 0;
             padding-bottom: 0;
-            line-height: 1.25;
         }
         span{
             font-size: .83em;

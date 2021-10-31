@@ -2,6 +2,7 @@
     width: 15.5rem;
     background-color:  #031037;
     overflow: hidden;
+    height: 100%;
     button{
         background-color: transparent;
         outline: none;
@@ -111,6 +112,11 @@
         ul{
             padding: 0;
             margin-top: -1rem;
+        }
+    }
+    @media screen and (max-width: 1024px) {
+        .sidebar_container-main{
+            display: none;
         }
     }
 }

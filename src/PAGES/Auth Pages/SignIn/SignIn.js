@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import './SignIn.scss'
 import lozad from 'lozad'
 import { Link, useHistory } from "react-router-dom";
-import { signInWithEmailAndPassword,  signInWithPopup, signInWithRedirect, GoogleAuthProvider} from 'firebase/auth'
+import { signInWithEmailAndPassword,  signInWithPopup, signInWithRedirect, GoogleAuthProvider } from 'firebase/auth'
 import {auth} from '../../../firebase'
 
 const SignIn = () => {
