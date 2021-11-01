@@ -22,8 +22,19 @@
             align-items: center;
             justify-content: space-around;
             margin: 0 3rem;
+            @media (max-width: 768px) {
+                display:grid;
+                padding-top: .5rem;
+                .input-field{
+                    margin: 0 0 10px;
+                }
+            }
             
             .form-field{
+                @media (max-width: 768px){
+                    text-align: center;
+                    color: #031037;
+                }
                 label{
                     font-weight: 500;
                     margin: 1.2rem 0;
@@ -52,6 +63,10 @@
                     font-family: 'Montserrat';
                     font-weight: 500;
                     color: #031037;
+                @media (max-width: 768px){
+                    text-align: center;
+                    color: #031037;
+                }
                 }
             }
         }
@@ -80,12 +95,12 @@
                 height: 2.5rem;
                 width: 30rem;
                 input{
-                    width: 30rem;
+                    width: 100%;
                     height: 2.5rem;
                     background-color: #F8F8F8;
                     border: none;
                     outline: none;
-                    padding: 0 2rem;
+                    padding: 0 .5rem;
                     border-bottom: 2px solid #5AD882;
                     border-bottom-right-radius:8px;
                     border-bottom-left-radius:8px;
@@ -93,9 +108,12 @@
                     font-family: 'Montserrat';
                     font-weight: 500;
                     color: #031037;
+                @media (max-width: 768px){
+                    text-align: center;
                 }
             }
         }
+    }
         .password-update{
             border: none;
             outline: none;
@@ -144,7 +162,7 @@
     50% {opacity: #9eeeb7 ; opacity: 0.75; }
     100% {opacity: #5AD882; opacity: 1;}
 }
-@media screen and (max-width: 1024px) {
+@media (min-width: 769px) and (max-width: 1024px) {
     .sidebar_desk{
         display: none;
     }
@@ -192,3 +210,46 @@
         }
     }
 }
+    @media (max-width: 768px) {
+        .sidebar_desk{
+            display: none;
+        }
+        .settings_content{
+            width: 100%;
+        }
+        .settings_page {
+        }
+        .password_settings{
+            background-color: white;
+            border-radius: 10px;
+            padding-top: 1.5rem;
+            margin: 0 2rem;
+            .form-field{
+                label{
+                    font-weight: 500;
+                    margin: 1.2rem 0;
+                }
+            }
+            .input-field{
+                margin: 0rem 0 1.5rem;
+                background-color: #F8F8F8;
+                border: 1px solid white;
+                border-radius: 10px;
+                height: 2.5rem;
+                display: flex;
+                justify-content: flex-start;
+                input{
+                    width: 20rem;
+                    height: 2.5rem;
+                    background-color: #F8F8F8;
+                    border: none;
+                    outline: none;
+                    padding: 0 .5rem;
+                    font-size: 1rem;
+                    font-family: 'Montserrat';
+                    font-weight: 500;
+                    color: #031037;
+                }
+            }
+        }
+    }

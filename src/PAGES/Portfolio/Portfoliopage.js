@@ -14,7 +14,9 @@ const Portfoliopage = () => {
                     </div>
                     <div className='portfolio-cards'>
                         <div className='p_value'>
-                            <h4> Total Portfolio Value</h4>
+                            <div className = 'p_content-header'>
+                                <h4> Total Portfolio Value</h4>
+                            </div>
                         </div>
                         <div className = 'p_value'>
 

@@ -73,6 +73,19 @@
   animation-iteration-count: infinite;
   opacity: 1; 
 }
+.success{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: #F8D7DA;
+  color: black;
+  padding: 10px 0;
+  border-radius: 10px;
+  animation: alertPulse1 1s ease-out;
+  animation-iteration-count: infinite;
+  opacity: 1; 
+}
 @keyframes alertPulse {
     0% {background-color: #F8D7DA; opacity: 1;}
     30%{opacity: red ; opacity: 0.9; }
@@ -80,6 +93,14 @@
     50% {opacity: red ; opacity: 0.75; }
     700% {opacity: red ; opacity: 0.85; }
     100% {opacity: #F8D7DA; opacity: 1;}
+}
+@keyframes alertPulse1 {
+    0% {background-color: #5AD882; opacity: 1;}
+    30%{opacity: #5AD882 ; opacity: 0.9; }
+    45%{opacity: #9eeeb7 ; opacity: 0.85; }
+    50% {opacity: #5AD882 ; opacity: 0.75; }
+    700% {opacity: #9eeeb7 ; opacity: 0.85; }
+    100% {opacity: #5AD882; opacity: 1;}
 }
 .sign-up{
     p{

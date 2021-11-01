@@ -112,7 +112,7 @@ const SettingsPage = () => {
                     <div className = 'form-field'>
                       <label> Date Of Birth </label>
                          <div className='input-field'>
-                            <input type='date'  />  
+                            <input type='date' placeholder = '24/07/1990' />  
                         </div>
                     </div>
                 </div>

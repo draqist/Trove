@@ -12,6 +12,7 @@ const SignUp = () => {
     const [password, setPassword] = useState('')
     const [passwordconfirm, setPasswordConfirm] = useState('')
     const [error, setError] = useState('')
+    const [success, setResponse ] = useState('')
     const history = useHistory()
 
     const googleProvider = new GoogleAuthProvider();
@@ -37,7 +38,7 @@ const SignUp = () => {
             await signInWithPopup(auth, googleProvider)
             history.replace('/dashboard')
             await sendEmailVerification(auth.currentUser)
-            alert('Verification Email has been sent')
+            setResponse('Verification email has been sent to your email')
         } catch (error) {
             setError(error.message)
         }
@@ -61,6 +62,9 @@ const SignUp = () => {
                                     <div className="">
                                         {error && (
                                             <div className = 'error' > {error} </div>
+                                        )}
+                                        {success && (
+                                            <div className = 'success' > {success} </div>
                                         )}
                                     <p className="signup_form-input-label">Email</p>
                                     <div className="signin_input">
