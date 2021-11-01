@@ -1,7 +1,8 @@
 import React from 'react'
 import './stockcard.scss'
 
-const StockCard = ({image, name, price,  percChange, prevClose, symbol}) => {
+const StockCard =
+    ({ image, name, price, percChange, prevClose, symbol }) => {
     return (
         <div className = 's-card'>
             <div className='stock_title'>

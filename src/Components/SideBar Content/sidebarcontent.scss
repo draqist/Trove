@@ -34,7 +34,6 @@
             border-radius: 8px;
             padding: 0 1.5rem;
             color: #2DD882;
-            // font-style: italic;
             background-color: #DFFAE5;
             h4{
                 font-weight: 700;
@@ -53,6 +52,7 @@
             .t_stocks{
                 display: flex;
                 align-items: center;
+                justify-content: space-around;
                 flex-wrap: wrap;
             }
     }

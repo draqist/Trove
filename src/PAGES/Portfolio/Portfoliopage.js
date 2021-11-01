@@ -18,12 +18,20 @@ const Portfoliopage = () => {
                                 <h4> Total Portfolio Value</h4>
                             </div>
                         </div>
-                        <div className = 'p_value'>
-
+                        <div className='asset_value'>
+                            <div className = 'p_content-header'>
+                                <h4> Total Asset Value </h4>
+                            </div>
                         </div>
-                        <div className = 'p_value'>
-
+                        <div className='p_value'>
+                            <div className = 'p_content-header'>
+                                <h4> Top Assets </h4>
+                            </div>
+                            
                         </div>
+                        {/* <div className = 'p_value'>
+
+                        </div> */}
                     </div>
                 </div>
             </div>

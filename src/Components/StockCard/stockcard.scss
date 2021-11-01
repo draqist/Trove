@@ -5,17 +5,27 @@
     background-color: #f8f8f8e7;
     margin-right: 8px;
     margin-bottom: 1.5rem;
+    .stock_title{
+        h4{
+            padding-left:8px;
+            font-size: 14.5px;
+            font-weight: 400;
+            margin: 7px 0 0px;
+        }
+    }
     h4{
         padding-left:8px;
         font-size: 14.5px;
         font-weight: 400;
         margin: 7px 0 0px;
+        text-transform: capitalize;
     }
     h5{
         padding-left:8px;
         margin: 0 0;
         padding-bottom: 3px;
-        font-weight: 600;
+        font-weight: 700;
+        font-size: 11px ;
         color: #031037;
     }
     .stockimage_desk{
@@ -36,7 +46,6 @@
         text-align: center;
 
         h5{
-            // padding-right: 1px;
             margin: 0 0;
             padding-bottom: 0;
         }

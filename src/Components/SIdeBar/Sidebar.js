@@ -49,10 +49,14 @@ const Sidebar = () => {
                             <li>Dashboard</li>
                         </div>
                     </NavLink>
-                    <NavLink to='/wallet' >
+                    <NavLink activeClassName = 'selected' activeStyle={{
+                        borderLeft: '3px solid white',
+                        backgroundColor: '#1A1A4B',
+                        display: 'flex',
+                    }} to = '/portfolio'>
                         <div className='side_nav'>
-                            <div className = 'not2'/>
-                            <li> Wallet</li>
+                            <div className = 'not4'/>
+                            <li>My Portfolio</li>
                         </div>
                     </NavLink>
                     <NavLink activeClassName = 'selected' activeStyle={{
@@ -65,6 +69,12 @@ const Sidebar = () => {
                             <li>Assets</li>
                         </div>
                     </NavLink>
+                    <NavLink to='/wallet' >
+                        <div className='side_nav'>
+                            <div className = 'not2'/>
+                            <li> Wallet</li>
+                        </div>
+                    </NavLink>
                     <NavLink activeClassName = 'selected' activeStyle={{
                         borderLeft: '3px solid white',
                         backgroundColor: '#1A1A4B',
@@ -75,16 +85,7 @@ const Sidebar = () => {
                             <li>Loans</li>
                         </div>
                     </NavLink>
-                    <NavLink activeClassName = 'selected' activeStyle={{
-                        borderLeft: '3px solid white',
-                        backgroundColor: '#1A1A4B',
-                        display: 'flex',
-                    }} to = '/portfolio'>
-                        <div className='side_nav'>
-                            <div className = 'not4'/>
-                            <li>My Portfolio</li>
-                        </div>
-                    </NavLink>
+                    
                     <NavLink activeClassName = 'selected' activeStyle={{
                         borderLeft: '3px solid white',
                         backgroundColor: '#1A1A4B',

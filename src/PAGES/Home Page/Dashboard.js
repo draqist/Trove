@@ -1,5 +1,5 @@
 import React from 'react'
-import SideBarContent from '../../Components/SideBar Content/SideBarContent'
+import DashContent from '../../Components/SideBar Content/SideBarContent'
 import Sidebar from '../../Components/SIdeBar/Sidebar'
 import './Dashboard.scss'
 
@@ -10,7 +10,7 @@ const DashboardPage = () => {
                     <Sidebar/>
                 </div>
             <div className='main-info'>
-                <SideBarContent/>
+                <DashContent/>
             </div>
         </div>
 

@@ -5,7 +5,7 @@
     justify-content: space-between;
     background-color: #F8FAFD;
     .portfolio_content{
-        width: 70rem;
+        width: 100vw;
         height: 100%;
         overflow-y: scroll;
     }
@@ -31,7 +31,7 @@
             justify-content: space-around;
             margin-top: 1rem;
             .p_value{
-                width: 20rem;
+                width: 16rem;
                 height: 9.75rem;
                 margin: 1rem 0;
                 border: 1.5px solid rgb(221, 218, 218);
@@ -46,8 +46,24 @@
                     margin: .75em 10px .4em;
                     color: #A9ABBE;
                 }
-
             }
+            .asset_value{
+                width: 22rem;
+                height: 9.75rem;
+                margin: 1rem 0;
+                border: 1.5px solid rgb(221, 218, 218);
+                border-radius: 8px;
+                box-shadow: 0 10px 27px rgba(161,184,227,.18);
+                .p_content-header{
+                        width: 100%;
+                        border-bottom: 2px solid #5AD882;
+                        border-radius: 8px;
+                    }
+            }
+                h4{
+                    margin: .75em 10px .4em;
+                    color: #A9ABBE;
+                }
         }
     }
 }
