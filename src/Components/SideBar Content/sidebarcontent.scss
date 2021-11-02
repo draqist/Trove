@@ -7,10 +7,14 @@
         justify-content: space-between;
         padding: 0 2rem;
         align-items: center;
-        // background-color: white;
         margin: 1.75rem 0 1.7rem;
         padding-bottom: .5rem;
         padding-top: .75rem;
+        @media (max-width: 768px){
+            padding-left: .75rem ;
+            padding-right: .75rem;
+            padding-bottom: .3rem;
+        }
         .Header_title{
             color: #031037;
             font-weight: 700;
@@ -18,6 +22,9 @@
             h3{
                 margin-bottom: 0;
                 line-height: 1.5rem;
+                @media (max-width: 768px){
+                    font-size:1.35rem ;
+                }
             }
             span{
                 font-size: 1rem;
@@ -28,13 +35,26 @@
             
         }
         .Header_portfolio{
-            width: 280px;
+            width: 17.5rem;
             height: 9rem;
             border: 2px solid rgba(0,0,0,.25);   
             border-radius: 8px;
             padding: 0 1.5rem;
             color: #2DD882;
             background-color: #DFFAE5;
+            @media(min-width: 375px) and (max-width: 767px){
+                display: none;
+
+            }
+            @media (max-width: 768px){
+                width: 14rem;
+                max-height: 8rem;
+                h4{
+                    font-size: .85rem;
+                    margin: 4px 0;
+                    white-space: nowrap;
+                }
+            }
             h4{
                 font-weight: 700;
                 margin: 16px 0;
@@ -49,6 +69,9 @@
         .trending_stocks{
             padding-top: .5rem;
             color: #031037;
+            h2{
+                padding-left: 6px;
+            }
             .t_stocks{
                 display: flex;
                 align-items: center;
@@ -57,7 +80,7 @@
             }
     }
     .market_news{
-        // margin-top: 2px;
+        margin-top: 2rem;
         h2{
             padding-top: 10px;
             margin-bottom: 6px;

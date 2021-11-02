@@ -5,9 +5,12 @@ import { auth } from '../../firebase'
 import StockCard from '../StockCard/StockCard'
 import { data } from '../../portfolio'
 import Newscard from '../NewsCard/Newscard'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 const portValue = '10,000'
 
 const DashContent = () => {
+    AOS.init()
     const [userName, setUserName] = useState('')
     onAuthStateChanged(auth, (user) => {
         if (user) {
@@ -36,7 +39,7 @@ const DashContent = () => {
                 <div className = 'trend-cust' >
                     <div className='trending_stocks'>
                         <h2> Trending</h2>
-                        <div className='t_stocks'>
+                        <div className='t_stocks' data-aos = 'fade-in-down' data-aos-duration = '1250' >
                             {
                                 data.trending.map((trends) => (
                                     <StockCard
@@ -54,7 +57,7 @@ const DashContent = () => {
                 <div className = 'trend-cust'>
                     <div className='market_news'>
                             <h2> Market News </h2>
-                        <div className = 'm-news'>
+                        <div className = 'm-news' >
                             {
                                 data.market_news.map((m_news) =>
                                     <Newscard

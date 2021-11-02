@@ -13,14 +13,7 @@ app.use(cors)
 app.use(express.json)
 app.use(express.urlencoded({ extended: false }))
 
-// const DB = process.env.DATABASE_URL; = mongoose.connect(DB, {
-//     useCreateIndex: true,
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-// })
-//     .then(() => {
-//         console.log('DB Connection successful');
-//     });
+
 const subscriptionSchema = mongoose.Schema({
     repayment_plan: {
         type: String,

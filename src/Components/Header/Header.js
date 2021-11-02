@@ -32,6 +32,11 @@ const Header = () => {
                                         Sign up
                                 </button>
                             </Link>
+                            <button class="toggle-button">
+                                <div class="toggle-button__line"></div>
+                                <div class="toggle-button__line"></div>
+                                <div class="toggle-button__line"></div>
+                            </button>
                         </div>
                     </nav>
                      

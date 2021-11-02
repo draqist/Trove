@@ -1,10 +1,13 @@
 import React from 'react'
 import './stockcard.scss'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 const StockCard =
     ({ image, name, price, percChange, prevClose, symbol }) => {
+        AOS.init()
     return (
-        <div className = 's-card'>
+        <div className = 's-card' >
             <div className='stock_title'>
                 <h4> {name}</h4>
                 <h5> { symbol }</h5>

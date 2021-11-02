@@ -1,12 +1,9 @@
 import React from 'react'
 import Header from '../../Components/Header/Header'
 import './Onboarding.scss'
-import lozad from 'lozad'
 import { Link } from 'react-router-dom'
 
 const OnboardingPage = () => {
-    const observer = lozad();
-    observer.observe()
     return (
         <div className='onboarding-desk'>
             <div className = 'onboarding-header'>

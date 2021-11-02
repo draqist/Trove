@@ -1,49 +1,20 @@
 import React, {useState} from 'react'
 import './SignIn.scss'
-import lozad from 'lozad'
 import { Link, useHistory } from "react-router-dom";
-import { signInWithEmailAndPassword,  signInWithPopup, signInWithRedirect, GoogleAuthProvider } from 'firebase/auth'
-import {auth} from '../../../firebase'
+import { auth } from '../../../firebase'
+import { handleGoogleSignIn, handleSignIn } from '../../../Helpers/Functions';
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+
 
 const SignIn = () => {
-    const observer = lozad();
-    observer.observe()
     const [loginemail, setLoginEmail] = useState('')
     const [loginpassword, setLoginPassword] = useState('')
     const [error, setError] = useState('')
     const history = useHistory()
-    const provider = new GoogleAuthProvider()
-    const handleSignIn = async () => {
-        try {
-            await signInWithEmailAndPassword(auth, loginemail, loginpassword)
-            history.replace('/dashboard')
-        } catch (error) {
-            console.log(error.message)
-            setError(error.message)
-        }
-    }
-
-    const handleGoogleSignIn = async () => {
-        if (window.screen < 400) {
-            try {
-                await signInWithRedirect(auth, provider)
-                history.replace('/dashboard')
-            } catch(error) {
-                setError(error.message)
-            }
-        } else {
-            try {
-                await signInWithPopup(auth, provider)
-                history.replace('/dashboard')
-            } catch (error) {
-                setError(error.message)
-            }
-        }
-    }
-
-
+    AOS.init()
     return (
-            <div className='sign-in lozad'>
+            <div className='sign-in' >
             <main>
                     <div className='form_logo-desk'>
                         <div className = 'form_container'>
@@ -63,7 +34,14 @@ const SignIn = () => {
                                     <p className="signin_form-input-label">Email</p>
                                     <div className="signin_input">
                                         <div className="form-input-1">
-                                                <input data-test="input" type="email" className="input_field    " id="email" placeholder="Email" value ={loginemail} onChange={(e) => setLoginEmail(e.target.value) }/>
+                                            <input
+                                                data-test="input"
+                                                type="email"
+                                                className="input_field"
+                                                id="email"
+                                                placeholder="Email"
+                                                value={loginemail}
+                                                onChange={(e) => setLoginEmail(e.target.value)} />
                                         </div>
                                     </div>
                                 </div>
@@ -73,15 +51,36 @@ const SignIn = () => {
                                     </p>
                                     <div className="signin_input">
                                         <div className="form-input-1">
-                                                <input data-test="input" type="password" className="input_field" id="password" placeholder="Password" value={loginpassword} onChange={(p) => setLoginPassword(p.target.value) }/>
+                                            <input
+                                                data-test="input"
+                                                type="password"
+                                                className="input_field"
+                                                id="password"
+                                                placeholder="Password"
+                                                value={loginpassword}
+                                                onChange={(p) => setLoginPassword(p.target.value)} />
                                         </div>
                                     </div>
                                 </div>
                                 <div>
-                                    <button type = 'submit' className = 'btn_signin btn_main' onClick = {handleSignIn} >
+                                    <button type='submit'
+                                        className='btn_signin btn_main'
+                                        onClick={() =>
+                                        {
+                                            handleSignIn(auth, loginemail, loginpassword, setError)
+                                            history.replace('/dashboard')
+                                        }
+                                        } >
                                         Log In
                                     </button>
-                                    <button type='submit' className='btn_signin btn_secondary' onClick={handleGoogleSignIn}>
+                                    <button
+                                        type='submit'
+                                        className='btn_signin btn_secondary'
+                                        onClick={() => {
+                                            handleGoogleSignIn(auth, setError)
+                                            history.replace('/dashboard')
+                                        }
+                                        }>
                                         <div className = 'google'/>
                                         Sign In with Google
                                     </button>

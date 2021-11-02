@@ -1,12 +1,12 @@
 import './App.scss'
 import SignIn from './PAGES/Auth Pages/SignIn/SignIn';
-import { Route } from 'react-router';
 import OnboardingPage from './PAGES/Onboarding Page/OnboardingPage';
 import SignUp from './PAGES/Auth Pages/SignUp/SignUp';
 import DashboardPage from './PAGES/Home Page/Dashboard';
 import SettingsPage from './PAGES/Settings/Settings';
 import Portfoliopage from './PAGES/Portfolio/Portfoliopage';
 import Assetpage from './PAGES/Asset/Assetpage';
+import { Route } from 'react-router';
 
 function App() {
 

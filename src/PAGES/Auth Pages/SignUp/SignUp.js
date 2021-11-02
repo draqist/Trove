@@ -1,49 +1,15 @@
 import React, {useState} from 'react'
 import './SignUp.scss'
-import lozad from 'lozad'
 import { Link, useHistory } from "react-router-dom";
-import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, sendEmailVerification} from 'firebase/auth'
-import {auth} from '../../../firebase'
+import { handleSignUp, handleGoogleSignUp } from '../../../Helpers/Functions';
 
 const SignUp = () => {
-    const observer = lozad();
-    observer.observe()
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [passwordconfirm, setPasswordConfirm] = useState('')
     const [error, setError] = useState('')
     const [success, setResponse ] = useState('')
     const history = useHistory()
-
-    const googleProvider = new GoogleAuthProvider();
-
-    const handleSignUp = async () => {
-        try {
-
-        if (password !== passwordconfirm) {
-            return setError('Passwords do not match')
-        }
-        if (password.length <= 7) {
-            return setError('Password is too short')
-            }
-            await createUserWithEmailAndPassword(auth, email, password)
-            history.replace('/dashboard')
-        } catch (error) {
-            console.log(error.message)
-            setError(error.message)
-        }
-    }
-    const handleGoogleSignUp = async () => {
-        try {
-            await signInWithPopup(auth, googleProvider)
-            history.replace('/dashboard')
-            await sendEmailVerification(auth.currentUser)
-            setResponse('Verification email has been sent to your email')
-        } catch (error) {
-            setError(error.message)
-        }
-    }
-
 
     return (
             <div className='sign-up lozad'>
@@ -69,7 +35,14 @@ const SignUp = () => {
                                     <p className="signup_form-input-label">Email</p>
                                     <div className="signin_input">
                                         <div className="form-input-1">
-                                                <input data-test="input" type="email" className="input_field    " id="email" placeholder="Email" value ={email} onChange={(e) => setEmail(e.target.value) }/>
+                                            <input
+                                                data-test="input"
+                                                type="email"
+                                                className="input_field"
+                                                id="email"
+                                                placeholder="Email"
+                                                value={email}
+                                                onChange={(e) => setEmail(e.target.value)} />
                                         </div>
                                     </div>
                                 </div>
@@ -90,15 +63,37 @@ const SignUp = () => {
                                     </p>
                                     <div className="signin_input">
                                         <div className="form-input-1">
-                                                <input data-test="input" type="password" className="input_field" id="password-confirm" placeholder="Confirm Password" value={passwordconfirm} onChange={(pc) => setPasswordConfirm(pc.target.value)}/>
+                                            <input
+                                                data-test="input"
+                                                type="password"
+                                                className="input_field"
+                                                id="password-confirm"
+                                                placeholder="Confirm Password"
+                                                value={passwordconfirm}
+                                                onChange={(pc) => setPasswordConfirm(pc.target.value)} />
                                         </div>
                                     </div>
                                 </div>
                                 <div>
-                                    <button type = 'submit' className = 'btn_signup btn_main' onClick = {handleSignUp} >
+                                    <button
+                                        type='submit'
+                                        className='btn_signup btn_main'
+                                        onClick = { () => {
+                                            if (handleSignUp(setError, password, passwordconfirm, email)) {
+                                                history.replace('/dashboard')
+                                            }
+                                        }
+                                        } >
                                         Sign Up
                                     </button>
-                                    <button type='submit' className='btn_signup btn_secondary' onClick={handleGoogleSignUp} >
+                                    <button
+                                        type='submit'
+                                        className='btn_signup btn_secondary'
+                                        onClick={() => {
+                                            if (handleGoogleSignUp(setResponse, setError)) {
+                                                history.replace('/dashboard')
+                                            }
+                                        }} >
                                         <div className = 'google'/>
                                         Sign Up with Google
                                     </button>
