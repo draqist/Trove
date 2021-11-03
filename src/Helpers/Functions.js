@@ -12,7 +12,7 @@ const provider = new GoogleAuthProvider()
 
 
 
-export const handleSignIn = async ({loginemail, loginpassword, setError}) => {
+export const handleSignIn = async (loginemail, loginpassword, setError) => {
     try {
         await signInWithEmailAndPassword(auth, loginemail, loginpassword)
         } catch (error) {
@@ -21,22 +21,30 @@ export const handleSignIn = async ({loginemail, loginpassword, setError}) => {
         }
     }
 
-   export const handleGoogleSignIn = async ({setError}) => {
+   export const handleGoogleSignIn = async (setError, redirect) => {
         if (window.screen < 400) {
             try {
-                await signInWithRedirect(auth, provider)
+               let res = await signInWithRedirect(auth, provider)
+                console.log(res)
+                if (res) {
+                    redirect()
+                }
             } catch(error) {
                 setError(error.message)
             }
         } else {
             try {
-                await signInWithPopup(auth, provider)
+                let res = await signInWithPopup(auth, provider)
+                console.log(res)
+                  if (res) {
+                    redirect()
+                }
             } catch (error) {
                 setError(error.message)
             }
         }
    }
-export const handleSignUp = async ({setError, password, passwordconfirm, email}) => {
+export const handleSignUp = async (setError, password, passwordconfirm, email) => {
         try {
 
         if (password !== passwordconfirm) {
@@ -51,9 +59,10 @@ export const handleSignUp = async ({setError, password, passwordconfirm, email})
             setError(error.message)
         }
 }
-export const handleGoogleSignUp = async ({setResponse, setError}) => {
+export const handleGoogleSignUp = async (setResponse, setError) => {
         try {
-            await signInWithPopup(auth, googleProvider)
+            let res = await signInWithPopup(auth, googleProvider)
+            console.log(res)
             setResponse('Verification email has been sent to your email')
         } catch (error) {
             setError(error.message)

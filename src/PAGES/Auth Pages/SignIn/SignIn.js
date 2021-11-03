@@ -13,6 +13,13 @@ const SignIn = () => {
     const [error, setError] = useState('')
     const history = useHistory()
     AOS.init()
+
+    const redirect = () => {
+        history.replace('/dashboard')
+        console.log('hello')
+    }
+
+    
     return (
             <div className='sign-in' >
             <main>
@@ -63,24 +70,16 @@ const SignIn = () => {
                                     </div>
                                 </div>
                                 <div>
-                                    <button type='submit'
+                                    <button
+                                        type='submit'
                                         className='btn_signin btn_main'
-                                        onClick={() =>
-                                        {
-                                            handleSignIn(auth, loginemail, loginpassword, setError)
-                                            history.replace('/dashboard')
-                                        }
-                                        } >
+                                        onClick={() =>{ handleSignIn(auth, loginemail, loginpassword, setError)}}>
                                         Log In
                                     </button>
                                     <button
                                         type='submit'
                                         className='btn_signin btn_secondary'
-                                        onClick={() => {
-                                            handleGoogleSignIn(auth, setError)
-                                            history.replace('/dashboard')
-                                        }
-                                        }>
+                                        onClick={() => handleGoogleSignIn(setError, redirect)}>
                                         <div className = 'google'/>
                                         Sign In with Google
                                     </button>

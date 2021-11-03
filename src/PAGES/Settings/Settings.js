@@ -1,7 +1,7 @@
 import React, {useState,useEffect} from 'react'
 import Sidebar from '../../Components/SIdeBar/Sidebar'
 import { auth } from '../../firebase'
-import { onAuthStateChanged, sendPasswordResetEmail, updatePassword, updateEmail, updateProfile, updatePhoneNumber} from 'firebase/auth'
+import { onAuthStateChanged, sendPasswordResetEmail, updatePassword, updateEmail, updateProfile} from 'firebase/auth'
 import './settings.scss'
 import update from '../../bg-images/update_black_24dp.svg'
 
@@ -22,7 +22,6 @@ const SettingsPage = () => {
             setDisplayName(user.displayName)
             setEmail(user.email)
         } 
-        setPhoneNumber('')
     })
     }, [])
     const handleOldPassword = (e) => {
@@ -55,21 +54,15 @@ const SettingsPage = () => {
     const NameHandler = (e) => {
         setDisplayName(e.target.value)
     }
-    const EmailUpdateHandler = async () => {
-        console.log(email)
-        try {
-            await updateEmail(user, email )
-            setResponse('Email has been updated') 
-        } catch (error) {
-            setError(error.message)
-        }
-    }
     const ProfileHandler = async () => {
         try {
+            await updateEmail(user, email)
+            console.log(user)
             await updateProfile(auth, {
-                displayName: setDisplayName(displayName),
-
+                displayName: NameHandler,
+                
             })
+            setResponse('Your profile has been updated') 
         } catch (error) {
             setError(error.message)
         }
@@ -96,14 +89,15 @@ const SettingsPage = () => {
                     <div className = 'form-field'>
                       <label> Display Name</label>
                          <div className='input-field'>
-                            <input type='text' placeholder = {displayName} onChange = {NameHandler} />  
+                            <input type='text' value = {displayName} placeholder = {displayName} onChange = {NameHandler}  />  
                         </div>
                     </div>
                     <div className = 'form-field'>
                       <label> Email</label>
                          <div className='input-field'>
-                            <input type='text' placeholder = {email}  value = {email} onChange={EmailInputSetter} />
-                            <img src={update} alt='' onClick={ EmailUpdateHandler }/>
+                            <input type='text'value = {email} onChange={EmailInputSetter} />
+                            <img src={update} alt='' />
+                            {/* onClick={ EmailUpdateHandler } */}
                         </div>
                     </div>
                 </div>

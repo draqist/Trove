@@ -5,7 +5,9 @@ import './portfolio.scss'
 const Portfoliopage = () => {
     return (
         <div className = 'portfolio-page'>
-            <Sidebar />
+            <div className='sidebar_desk'>
+                <Sidebar />
+            </div>
             <div className='portfolio_content'>
                 <div className='portfolio-header'>
                     <div style = {{borderBottom: '2px solid rgb(221, 218, 218)', borderRadius: '10px', paddingBottom: '1rem'}}>

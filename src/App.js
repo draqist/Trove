@@ -7,6 +7,7 @@ import SettingsPage from './PAGES/Settings/Settings';
 import Portfoliopage from './PAGES/Portfolio/Portfoliopage';
 import Assetpage from './PAGES/Asset/Assetpage';
 import { Route } from 'react-router';
+import Loanspage from './PAGES/Loan Page/Loanspage';
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
         <Route path='/settings' component={ SettingsPage}/>
         <Route path='/portfolio' component={ Portfoliopage}/>
         <Route path='/assets' component={ Assetpage}/>
+        <Route path='/loans' component={ Loanspage}/>
       </div>
   );
 }

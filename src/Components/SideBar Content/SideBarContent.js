@@ -11,12 +11,11 @@ const portValue = '10,000'
 
 const DashContent = () => {
     AOS.init()
-    const [userName, setUserName] = useState('')
+    const [userName, setUserName] = useState('');
+
     onAuthStateChanged(auth, (user) => {
         if (user) {
-            if (user.displayName === null) {
-                setUserName('Stranger')
-            }else
+            console.log(user)
             setUserName(user.displayName)
         }
     })
