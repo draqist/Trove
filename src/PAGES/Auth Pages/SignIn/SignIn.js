@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 import './SignIn.scss'
 import { Link, useHistory } from "react-router-dom";
-import { auth } from '../../../firebase'
 import { handleGoogleSignIn, handleSignIn } from '../../../Helpers/Functions';
 import AOS from 'aos'
 import 'aos/dist/aos.css'
@@ -73,7 +72,7 @@ const SignIn = () => {
                                     <button
                                         type='submit'
                                         className='btn_signin btn_main'
-                                        onClick={() =>{ handleSignIn(auth, loginemail, loginpassword, setError)}}>
+                                        onClick={() =>{ handleSignIn(loginemail, loginpassword, redirect)}}>
                                         Log In
                                     </button>
                                     <button

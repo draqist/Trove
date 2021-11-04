@@ -98,5 +98,60 @@
                     color: #A9ABBE;
                 }
         }
+         .loan_form{
+            max-width: 26.25rem;
+            margin: auto;
+            .signup_form-input-label{
+                font-size: 14px;
+                font-weight: 700;
+                line-height: 20px;
+                letter-spacing: .1px;
+                color: #0d0d21;
+                opacity: .5;
+                margin-bottom: 0;
+                margin-top: .8rem;
+            }
+            .signup_form-input-label-1{
+                font-size: 14px;
+                font-weight: 700;
+                line-height: 20px;
+                letter-spacing: .1px;
+                color: #0d0d21;
+                opacity: .5;
+                margin-bottom: 0;
+                margin-top: .5rem;
+            }
+            .form-input-1{
+                margin: 5px 0;
+                position: relative;
+                
+                .input_field{
+                    display: block;
+                    border: none;
+                    height: 50px;
+                    padding: 0;
+                    background: #f8f8f8;
+                    border-radius: 5px;
+                    padding-left: 3%;
+                    width: 97%;
+                    color: #000;
+                    // border-bottom: none!important;
+                    // box-shadow: none;
+                    box-sizing: content-box;
+                    margin: 0 0 0.5rem;
+                    font-size: 1rem;
+                    font-weight: 400;
+                    line-height: 1.5;
+                    outline: none;
+                    overflow: visible;
+                    :focus{
+                        border-bottom: 2px solid blue;
+                    }
+                }
+                .form-input-2{
+                    margin-bottom: 1rem !important; 
+                }
+            }
+        }
     }
 }

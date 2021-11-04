@@ -38,7 +38,7 @@ const DashContent = () => {
                 <div className = 'trend-cust' >
                     <div className='trending_stocks'>
                         <h2> Trending</h2>
-                        <div className='t_stocks' data-aos = 'fade-in-down' data-aos-duration = '1250' >
+                        <div className='t_stocks' data-aos = 'fade-in-down' data-aos-duration = '1500' >
                             {
                                 data.trending.map((trends) => (
                                     <StockCard

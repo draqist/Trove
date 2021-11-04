@@ -12,12 +12,14 @@ const provider = new GoogleAuthProvider()
 
 
 
-export const handleSignIn = async (loginemail, loginpassword, setError) => {
+export const handleSignIn = async (loginemail, loginpassword, redirect) => {
     try {
-        await signInWithEmailAndPassword(auth, loginemail, loginpassword)
+        let res = await signInWithEmailAndPassword(auth, loginemail, loginpassword)
+        if (res) {
+                    redirect()
+                }
         } catch (error) {
             console.log(error.message)
-            setError(error.message)
         }
     }
 

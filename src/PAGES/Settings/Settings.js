@@ -1,7 +1,7 @@
 import React, {useState,useEffect} from 'react'
 import Sidebar from '../../Components/SIdeBar/Sidebar'
 import { auth } from '../../firebase'
-import { onAuthStateChanged, sendPasswordResetEmail, updatePassword, updateEmail, updateProfile} from 'firebase/auth'
+import { onAuthStateChanged, sendPasswordResetEmail, updateEmail, updateProfile} from 'firebase/auth'
 import './settings.scss'
 import update from '../../bg-images/update_black_24dp.svg'
 
@@ -36,7 +36,6 @@ const SettingsPage = () => {
     const NewpasswordSetter = async () => {
         try {
             await sendPasswordResetEmail(auth, email)
-            await updatePassword(auth, newPassword)
             setResponse('Password Reset Link Sent, Kindly check your email')
         } catch (error){
             setError(error.message)
@@ -44,7 +43,6 @@ const SettingsPage = () => {
         }
     }
     const PhoneSetter = (e) => {
-        
         setPhoneNumber(e.target.value)
     }
     const EmailInputSetter = (e) => {
@@ -56,13 +54,19 @@ const SettingsPage = () => {
     }
     const ProfileHandler = async () => {
         try {
-            await updateEmail(user, email)
-            console.log(user)
             await updateProfile(auth, {
-                displayName: NameHandler,
-                
+                displayName: displayName,
             })
             setResponse('Your profile has been updated') 
+        } catch (error) {
+            setError(error.message)
+        }
+    }
+    const EmailUpdateHandler = async () => {
+        console.log(email)
+        try {
+            await updateEmail(user, email )
+            setResponse('Email has been updated') 
         } catch (error) {
             setError(error.message)
         }
@@ -74,6 +78,7 @@ const SettingsPage = () => {
                 </div>
                      
             <div className='settings_content'>
+                {console.log(error)}
                      {error && (
                          <div className='error1' >
                              {error}
@@ -96,8 +101,8 @@ const SettingsPage = () => {
                       <label> Email</label>
                          <div className='input-field'>
                             <input type='text'value = {email} onChange={EmailInputSetter} />
-                            <img src={update} alt='' />
-                            {/* onClick={ EmailUpdateHandler } */}
+                            <img src={update} alt='' onClick={ EmailUpdateHandler } />
+                            
                         </div>
                     </div>
                 </div>
