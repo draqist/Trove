@@ -13,9 +13,10 @@
             background-color: white;
             border-radius:10px ;
             padding-bottom: 1rem;
-            margin: 0 2rem;
+            margin: .5rem 2rem;
         h2{
-            margin: .83rem 1rem 0;
+            padding: .83rem 1rem 0;
+            margin: 0;
         }
         span{
             margin: .83rem 1rem 0;
@@ -30,6 +31,11 @@
             align-items: center;
             justify-content: space-around;
             margin-top: 1rem;
+            @media (max-width: 767px) {
+                display: grid;
+                grid-template-rows: 1fr;
+                align-items: center;
+            }
             .p_value{
                 width: 16rem;
                 height: 9.75rem;
@@ -37,10 +43,34 @@
                 border: 1.5px solid rgb(221, 218, 218);
                 border-radius: 8px;
                 box-shadow: 0 10px 27px rgba(161,184,227,.18);
+                text-align: center;
+                @media (min-width: 768px) and (max-width: 1023px){
+                    width: 13rem;
+                    h1{
+                        font-size: 1rem;
+                    }
+                    h4{
+                        white-space: nowrap;
+                    }
+                }
                 .p_content-header{
                     width: 100%;
-                    border-bottom: 2px solid #5AD882;
-                    border-radius: 8px;
+                    .balance{
+                        border-bottom: 2px solid #5AD882;
+                        border-radius: 8px;
+                        border-radius: 8px;
+                        border-top: 2px solid #5AD882;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        color: #031037;
+                        margin-top: 1.5rem;
+                        h1{
+                            margin-top: 0;
+                            margin-bottom: 0;
+                            font-size: 1.75rem;
+                        }
+                        }
                 }
                 h4{
                     margin: .75em 10px .4em;
@@ -54,10 +84,38 @@
                 border: 1.5px solid rgb(221, 218, 218);
                 border-radius: 8px;
                 box-shadow: 0 10px 27px rgba(161,184,227,.18);
+                text-align: center;
+                @media (min-width: 768px) and (max-width: 1023px){
+                    width: 16rem;
+                    h1{
+                        font-size: 1rem;
+                    }
+                    h4{
+                        white-space: nowrap;
+                    }
+                }
+                @media (max-width: 767px) {
+                    width: 16rem;
+                }
                 .p_content-header{
                         width: 100%;
-                        border-bottom: 2px solid #5AD882;
-                        border-radius: 8px;
+                        .balance{
+                            border-bottom: 2px solid #5AD882;
+                            border-radius: 8px;
+                            border-radius: 8px;
+                            border-top: 2px solid #5AD882;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            color: #031037;
+                            margin-top: 1.5rem;
+                            h1{
+                                margin-top: 0;
+                                margin-bottom: 0;
+                                font-size: 1.5rem;
+                            }
+                        }
+                        
                     }
             }
                 h4{
@@ -65,5 +123,50 @@
                     color: #A9ABBE;
                 }
         }
+        
     }
-}
+    .asset-header{
+            background-color: white;
+            border-radius:10px ;
+            padding-bottom: 1rem;
+            margin: 1rem 2rem;
+        h2{
+            padding : 1rem 1rem 0;
+            margin: 0;
+        }
+        span{
+            margin: .83rem 1rem 0;
+            font-size: 13px;
+            color: grey;
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+
+        }
+        .portfolio-cards{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            margin-top: 1rem;
+            .table_container{
+                width: 97%;
+                .table-head{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 0 1em;
+                    text-align: center;
+                    text-transform: uppercase;
+                    font-weight: 300;
+                    background-color: #031037d5;
+                    border-radius: 8px;
+                    h4{
+                        color: white;
+                    }
+                }
+            }
+            }
+                h4{
+                    margin: .75em 10px .4em;
+                    color: #A9ABBE;
+                }
+        }}

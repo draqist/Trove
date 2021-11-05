@@ -2,6 +2,9 @@
     overflow: hidden;
     .onboarding-header{
         margin: 0 6rem;
+        @media (max-width: 600px) {
+            margin: 0 2rem;
+        }
         
     }
     .hero-desk{

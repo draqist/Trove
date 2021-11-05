@@ -6,6 +6,7 @@ import './settings.scss'
 import update from '../../bg-images/update_black_24dp.svg'
 
 
+
 const SettingsPage = () => {
     let [displayName, setDisplayName] = useState('')
     const [email, setEmail] = useState('')

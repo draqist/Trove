@@ -2,6 +2,7 @@ import React from 'react'
 import Header from '../../Components/Header/Header'
 import './Onboarding.scss'
 import { Link } from 'react-router-dom'
+import { Button } from '@mui/material'
 
 const OnboardingPage = () => {
     return (
@@ -17,9 +18,9 @@ const OnboardingPage = () => {
                     </p>
                     <div className = 'btn-desk'>
                         <Link to = '/signup'>
-                            <button className='get-st'>
+                            <Button style = {{backgroundColor: '#5AD882'}} className='get-st'>
                                 Get started
-                            </button>
+                            </Button>
                         </Link>
                     </div>
 

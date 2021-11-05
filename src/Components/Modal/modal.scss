@@ -1,0 +1,78 @@
+.loan_form{
+            width: 26.25rem;
+            margin: auto;
+            background-color: white;
+            padding: 1rem 1rem;
+            border-radius: 16px;
+            font-family: 'Montserrat';
+            h3{
+                text-align: center;
+                margin-bottom: 1.2rem;
+            }
+            button{
+                    text-align: center;
+                    width: 100%;
+                    height: 3rem;
+                    margin: 1rem auto;
+                    border-radius: 8px;
+                    background-color: #5AD882;
+                    color: white;
+                    font-size: 1rem;
+                    border: none;
+                }
+            .signup_form-input-label{
+                font-size: 14px;
+                font-weight: 700;
+                line-height: 20px;
+                letter-spacing: .1px;
+                color: #0d0d21;
+                opacity: .5;
+                margin-bottom: 0;
+                margin-top: .8rem;
+            }
+            .signup_form-input-label-1{
+                font-size: 14px;
+                font-weight: 700;
+                line-height: 20px;
+                letter-spacing: .1px;
+                color: #0d0d21;
+                opacity: .5;
+                margin-bottom: 0;
+                margin-top: .5rem;
+            }
+            .form-input-1{
+                margin: 5px 0;
+                position: relative;
+                display: flex;
+                align-items: center;
+                background: #f8f8f8;
+                border-radius: 10px;
+                padding: 0 .5rem;
+                justify-content: space-between;
+                .input_field{
+                    display: block;
+                    border: none;
+                    height: 50px;
+                    background: #f8f8f8;
+                    border-radius: 10px;
+                    padding-left: 3%;
+                    color: #000;
+                    font-size: 1rem;
+                    font-weight: 400;
+                    line-height: 1.5;
+                    outline: none;
+                    overflow: visible;
+                    align-items: center;
+                    width: 100%;
+                }
+                .form-input-2{
+                    margin-bottom: 1rem !important; 
+                }
+            }
+        }
+        .close{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 1rem;
+        }

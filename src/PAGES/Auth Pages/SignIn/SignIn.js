@@ -15,9 +15,7 @@ const SignIn = () => {
 
     const redirect = () => {
         history.replace('/dashboard')
-        console.log('hello')
     }
-
     
     return (
             <div className='sign-in' >

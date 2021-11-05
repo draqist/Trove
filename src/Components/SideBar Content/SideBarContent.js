@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './sidebarcontent.scss'
 import { onAuthStateChanged } from 'firebase/auth'
 import { auth } from '../../firebase'
@@ -13,12 +13,13 @@ const DashContent = () => {
     AOS.init()
     const [userName, setUserName] = useState('');
 
-    onAuthStateChanged(auth, (user) => {
+    useEffect(() => {
+        onAuthStateChanged(auth, (user) => {
         if (user) {
-            console.log(user)
             setUserName(user.displayName)
         }
     })
+    }, [])
     return (
         <>
             <section className='dashboard_content'>

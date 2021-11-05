@@ -13,6 +13,9 @@
         display: flex;
         flex-grow: 2.5;
         margin-left: 2rem;
+        @media screen and (max-width: 790px) {
+            display: none;
+        }
         ul{
            display: flex;
            justify-content: space-between;
@@ -72,15 +75,14 @@
                 }
             }
         }
-        @media screen and (max-width: 800px) {
-        .nav_options{
-            display: none;
-        }
-        .menu-icon{
-            // display: flex;
-        }
-    }
+        
 }
+}
+.btn-small{
+    display: none;
+    @media (max-width: 769px){
+        display: flex;
+    }
 }
 .toggle-button {
     display: -ms-flexbox;

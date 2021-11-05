@@ -1,15 +1,11 @@
-import React from 'react'
+import Table  from '../../Components/Table/Table'
+import React, {useState} from 'react'
 import Sidebar from '../../Components/SIdeBar/Sidebar'
-import { Portfolio } from '../../portfolio'
 import './loans.scss'
+import AlertDialog from '../../Components/Modal/Modal';
 
-
-const loanBalance = 10000
 const Loanspage = () => {
-    const reduced = Portfolio.reduce((portfolioTotal, totalQt) => {
-        return totalQt.equityValue + portfolioTotal
-    }, 0)
-    console.log(reduced)
+    const [open, setOpen] = useState(false)
     return (
         <div className = 'loans_page'>
             <div className='sidebar_desk'>
@@ -17,46 +13,50 @@ const Loanspage = () => {
             </div>
             <div className='loan_content'>
                 <div className = 'loan_headers'>
-                        <h2> All Loans </h2>
-                    <main>
-                        <div className='loan-balance'>
-                            <h4> Loan Balance</h4>
-                            <div>
-                                <h2> {reduced}  </h2>
+                    <div className = 'balances'>
+                        <div className='loan-title' >
+                            <h2> All Loans </h2>
+                            <button onClick = {() => setOpen(!open)} >
+                                Take a loan
+                            </button>
+                        </div>
+                        <main>
+                            <div className='loan-balance'>
+                                <h4> Loan Balance</h4>
+                                <div className = 'loan-values'>
+                                    <h2>  0  </h2>
+                                </div>
                             </div>
-                        </div>
-                        <div className='active-loans'>
-                            <h4> Active Loans </h4>
-                    </div>
-                    <div className='due-dates'>
-                        <h4> Due dates</h4>
-                    </div>
-                    </main>
-                    <div className='loan_form'>
-                        <h3> Fill this loan form </h3>
-                        <p className="signup_form-input-label">Loan Amount</p>
-                        <div className="signin_input">
-                            <div className="form-input-1">
-                                <input data-test="input" type="tel" className="input_field" id="email" placeholder="" />
+                            <div className='active-loans'>
+                                <h4> Active Loans </h4>
+                                <div className = 'loan-values'>
+                                    <h2>  0  </h2>
+                                </div>
                             </div>
-                        </div>
-                <div className="form-input-2">
-                    <p className="signup_form-input-label">Payback Duration </p>
-                    <div className="signin_input">
-                        <div className="form-input-1">
-                            <input data-test="input" type="password" className="input_field" id="password" placeholder="Password" />
-                        </div>
+                            <div className='due-dates'>
+                                <h4> Due Date(s)</h4>
+                                <div className = 'loan-values'>
+                                    <h2>  0  </h2>
+                                </div>
+                            </div>
+                        </main>
                     </div>
-                </div>
-                <div className="form-input-2">
-                    <p className="signup_form-input-label-1">Password Confirmation</p>
-                    <div className="signin_input">
-                        <div className="form-input-1">
-                            <input data-test="input" type="password" className="input_field" id="password-confirm" placeholder="Confirm Password"  />
+                    <div className = 'balances'>
+                        <h2> Loan Balance</h2>
+                        <div className='table_body'>
+                            <div className='table-head'>
+                                <h4> s/n </h4>
+                                <h4> loan title</h4>
+                                <h4> Interest-per-month</h4>
+                                <h4> Amount taken </h4>
+                                <h4>  Balance </h4>
+                            </div>
+                                <Table key={null} eQv={'-'} Qt={'-'} pps = {'-'} id={1} symbol={'-'}/>
                         </div>
-                    </div>
-                    </div>
-                </div>
+                   </div>
+                    {
+                        open && <AlertDialog open={open} setOpen={setOpen}/>
+                    }
                 </div>
             </div>
         </div>

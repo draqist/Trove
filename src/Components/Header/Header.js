@@ -1,6 +1,7 @@
 import React from 'react'
 import './Header.scss'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
+import { Button } from '@mui/material'
 
 const Header = () => {
     return (
@@ -22,23 +23,29 @@ const Header = () => {
                             <Link to = '/Fees' className = 'li'>Fees</Link>
                         </ul>
                         <div className='btn-group'>
-                            <Link to='/login' className='secondary'>
-                                <button>
-                                        Login 
-                                </button>
-                            </Link>
-                            <Link to='/signup' className='primary-1'>
-                                <button>
-                                        Sign up
-                                </button>
-                            </Link>
-                            <button class="toggle-button">
+                            <Button variant='outlined' style={{ border: '2px solid #5AD882', marginRight: '1rem' }}>
+                                <NavLink style={{
+                                    color: '#0D0D21', fontSize: '1em', fontFamily: 'Montserrat'
+                                }}  to='/login' className='secondary'>
+                                    Login
+                                </NavLink>
+                            </Button>
+                            <Button style={{ backgroundColor: '#5AD882', color: 'white' }} variant='contained'>
+                                <NavLink style={{
+                                    color: 'white', fontSize: '1em', fontFamily: 'Montserrat'
+                                }} to='/signup' >
+                                    Sign up
+                                </NavLink>
+                            </Button>
+                        </div>
+                    </nav>
+                            <div className = 'btn-small'>
+                                 <button class="toggle-button">
                                 <div class="toggle-button__line"></div>
                                 <div class="toggle-button__line"></div>
                                 <div class="toggle-button__line"></div>
                             </button>
-                        </div>
-                    </nav>
+                           </div>
                      
                 </div>
             </div>

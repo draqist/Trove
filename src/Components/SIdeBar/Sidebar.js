@@ -69,12 +69,6 @@ const Sidebar = () => {
                             <li>Assets</li>
                         </div>
                     </NavLink>
-                    <NavLink to='/wallet' >
-                        <div className='side_nav'>
-                            <div className = 'not2'/>
-                            <li> Wallet</li>
-                        </div>
-                    </NavLink>
                     <NavLink activeClassName = 'selected' activeStyle={{
                         borderLeft: '3px solid white',
                         backgroundColor: '#1A1A4B',
@@ -85,6 +79,12 @@ const Sidebar = () => {
                             <li>Loans</li>
                         </div>
                     </NavLink>
+                        <NavLink to='#' >
+                            <div className='side_nav'>
+                                <div className = 'not2'/>
+                                <li> Wallet</li>
+                            </div>
+                        </NavLink>
                     
                     <NavLink activeClassName = 'selected' activeStyle={{
                         borderLeft: '3px solid white',

@@ -11,96 +11,66 @@ const SignUp = () => {
     const [success, setResponse ] = useState('')
     const history = useHistory()
 
+    const redirect = () => {
+        history.replace('/dashboard')
+    }
+
     return (
-            <div className='sign-up lozad'>
+        <div className='sign-up lozad'>
             <main>
-                    <div className='form_logo-desk'>
-                        <div className = 'form_container'>
-                            <div className = 'form'>
-                                <div className='form_header-container'>
-                                    <img src='https://troveapp.co/assets/images/logo.png' alt='' />
+                <div className='form_logo-desk'>
+                    <div className='form_container'>
+                        <div className='form'>
+                            <div className='form_header-container'>
+                                <img src='https://troveapp.co/assets/images/logo.png' alt='' />
                                 <p className='form-header-info'> START INVESTING WITH TROVE</p>
-                                <p className = 'sign_up-title'>
-                                    Sign up here
-                                </p>
+                                <p className='sign_up-title'>Sign up here</p>
                             </div>
-                                <div className='signup_form-container'>
-                                    <div className="">
-                                        {error && (
-                                            <div className = 'error' > {error} </div>
-                                        )}
-                                        {success && (
-                                            <div className = 'success' > {success} </div>
-                                        )}
+                            <div className='signup_form-container'>
+                                <div className="">
+                                    {error && (
+                                        <div className='error' > {error}</div>)}
+                                    {success && (
+                                        <div className='success' > {success} </div>
+                                    )}
                                     <p className="signup_form-input-label">Email</p>
                                     <div className="signin_input">
                                         <div className="form-input-1">
-                                            <input
-                                                data-test="input"
-                                                type="email"
-                                                className="input_field"
-                                                id="email"
-                                                placeholder="Email"
-                                                value={email}
-                                                onChange={(e) => setEmail(e.target.value)} />
+                                            <input data-test="input" type="email" className="input_field" id="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
                                         </div>
                                     </div>
                                 </div>
                                 <div className="form-input-2">
-                                    <p className="signup_form-input-label">
-                                        Password
-                                    </p>
+                                    <p className="signup_form-input-label">Password</p>
                                     <div className="signin_input">
                                         <div className="form-input-1">
-                                                <input data-test="input" type="password" className="input_field" id="password" placeholder="Password" value={password} onChange={(p) => setPassword(p.target.value) }/>
+                                            <input data-test="input" type="password" className="input_field" id="password" placeholder="Password" value={password} onChange={(p) => setPassword(p.target.value)} />
                                         </div>
                                     </div>
                                     <small>**Password should contain atleast one uppercase, lowercase, digit, symbol and minimum of 8 characters**</small>
                                 </div>
                                 <div className="form-input-2">
-                                    <p className="signup_form-input-label-1">
-                                        Password Confirmation
-                                    </p>
+                                    <p className="signup_form-input-label-1">Password Confirmation</p>
                                     <div className="signin_input">
                                         <div className="form-input-1">
                                             <input
-                                                data-test="input"
-                                                type="password"
-                                                className="input_field"
-                                                id="password-confirm"
-                                                placeholder="Confirm Password"
-                                                value={passwordconfirm}
-                                                onChange={(pc) => setPasswordConfirm(pc.target.value)} />
+                                                data-test="input" type="password" className="input_field" id="password-confirm" placeholder="Confirm Password" value={passwordconfirm} onChange={(pc) => setPasswordConfirm(pc.target.value)} />
                                         </div>
                                     </div>
                                 </div>
                                 <div>
-                                    <button
-                                        type='submit'
-                                        className='btn_signup btn_main'
-                                        onClick = { () => {
-                                            if (handleSignUp(setError, password, passwordconfirm, email)) {
-                                                history.replace('/dashboard')
-                                            }
-                                        }
-                                        } >
+                                    <button type='submit'className='btn_signup btn_main'onClick = { () => {
+                                            handleSignUp(setError, password, passwordconfirm, email, redirect)}}>
                                         Sign Up
                                     </button>
-                                    <button
-                                        type='submit'
-                                        className='btn_signup btn_secondary'
-                                        onClick={() => {
-                                            if (handleGoogleSignUp(setResponse, setError)) {
-                                                history.replace('/dashboard')
-                                            }
-                                        }} >
-                                        <div className = 'google'/>
-                                        Sign Up with Google
+                                    <button type='submit'className='btn_signup btn_secondary'onClick={() => {
+                                        handleGoogleSignUp(setResponse, setError, redirect)
+                                    }}>
+                                        <div className='google' />Sign Up with Google
                                     </button>
                                     <p className="sign_up_in">
                                         <Link to="/login">
-                                            <span className="sign_up_in font-weight-bold">Have an account?  Sign in here
-                                            </span>
+                                            <span className="sign_up_in font-weight-bold">Have an account?  Sign in here</span>
                                         </Link>
                                     </p>
                                     <p className="sign_up_in">
@@ -117,28 +87,14 @@ const SignUp = () => {
                                     </p>
                                 </div>
                             </div>
-                            </div>
                         </div>
-                        <div style = {{display: 'flex', width: '100%'}}>
+                    </div>
+                    <div style={{ display: 'flex', width: '100%' }}>
 
-                        </div>
+                    </div>
                     </div>
                 </main>
             </div>
     )
 }
-//     useEffect(() => {
-//     if (loading) {
-//         return (
-//           <div className = 'loader-container'>
-//                 <div className="loading">
-//                     <div className="arc"></div>
-//                     <div className="arc"></div>
-//                     <div className="arc"></div>
-//                 </div>
-//             </div>
-//       );
-//     }
-//     if (user) history.replace("/dashboard");
-//   }, [user, loading, history]);
 export default SignUp
