@@ -4,10 +4,12 @@ import { auth } from '../../firebase'
 import { onAuthStateChanged, sendPasswordResetEmail, updateEmail, updateProfile} from 'firebase/auth'
 import './settings.scss'
 import update from '../../bg-images/update_black_24dp.svg'
+import { NavLink } from 'react-router-dom'
 
 
 
 const SettingsPage = () => {
+    const [nav, setNav] = useState(false)
     let [displayName, setDisplayName] = useState('')
     const [email, setEmail] = useState('')
     const [error, setError] = useState('')
@@ -64,7 +66,6 @@ const SettingsPage = () => {
         }
     }
     const EmailUpdateHandler = async () => {
-        console.log(email)
         try {
             await updateEmail(user, email )
             setResponse('Email has been updated') 
@@ -79,7 +80,34 @@ const SettingsPage = () => {
                 </div>
                      
             <div className='settings_content'>
-                {console.log(error)}
+                <div className = 'btn-small'>
+                            <button className="toggle-button" onClick = {()=> setNav(!nav)}>
+                                <div className="toggle-button__line"></div>
+                                <div className="toggle-button__line"></div>
+                                <div className="toggle-button__line"></div>
+                            </button>
+                        </div>
+                {nav &&
+                        <div className = 'm_nav'>
+                            <div className = 'wnl'>
+                                <NavLink activeClassName = 'selected'  to='/dashboard' onClick = {() => setNav(!nav)}>
+                        <h4> Dashboard</h4>
+                    </NavLink>
+                    <NavLink activeClassName = 'selected'  to = '/portfolio' onClick = {() => setNav(!nav)}>
+                       <h4> Portfolio</h4>
+                    </NavLink>
+                    <NavLink activeClassName = 'selected' to='/assets' onClick = {() => setNav(!nav)}>
+                        <h4> Assets</h4>
+                    </NavLink>
+                    <NavLink activeClassName = 'selected'  to='/loans' onClick = {() => setNav(!nav)}>
+                        <h4> Loans </h4>
+                    </NavLink>
+                    <NavLink activeClassName = 'selected'to='/settings' onClick = {() => setNav(!nav)} >
+                        <h4> Settings </h4>
+                    </NavLink>
+                            </div>
+                        </div>
+                }
                      {error && (
                          <div className='error1' >
                              {error}

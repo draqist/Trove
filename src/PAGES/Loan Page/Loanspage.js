@@ -2,7 +2,7 @@ import Table  from '../../Components/Table/Table'
 import React, {useState} from 'react'
 import Sidebar from '../../Components/SIdeBar/Sidebar'
 import './loans.scss'
-import AlertDialog from '../../Components/Modal/Modal';
+import Modal from '../../Components/Modal/Modal';
 
 const Loanspage = () => {
     const [open, setOpen] = useState(false)
@@ -55,7 +55,7 @@ const Loanspage = () => {
                         </div>
                    </div>
                     {
-                        open && <AlertDialog open={open} setOpen={setOpen}/>
+                        open && <Modal open={open} setOpen={setOpen}/>
                     }
                 </div>
             </div>

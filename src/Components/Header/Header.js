@@ -1,9 +1,10 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './Header.scss'
 import { Link, NavLink } from 'react-router-dom'
 import { Button } from '@mui/material'
 
 const Header = () => {
+    const [nav, setNav] = useState(false)
     return (
         <div className = 'header-nav'>
             <div className='logo_image'>
@@ -39,14 +40,20 @@ const Header = () => {
                             </Button>
                         </div>
                     </nav>
-                            <div className = 'btn-small'>
-                                 <button class="toggle-button">
+                        <div className = 'btn-small'>
+                            <button class="toggle-button" onClick = {()=> setNav(!nav)}>
                                 <div class="toggle-button__line"></div>
                                 <div class="toggle-button__line"></div>
                                 <div class="toggle-button__line"></div>
                             </button>
-                           </div>
-                     
+                        </div>
+                    {nav &&
+                        <div className = 'm_nav'>
+                            <h4> Home</h4>
+                            <h4> Blog </h4>
+                            <h4> Fees</h4>
+                        </div>
+                    }
                 </div>
             </div>
                 

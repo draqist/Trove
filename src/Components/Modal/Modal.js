@@ -8,12 +8,14 @@ import { PaystackButton } from "react-paystack"
 import { onAuthStateChanged } from '@firebase/auth';
 import { auth } from '../../firebase';
 import CloseSharpIcon from '@mui/icons-material/CloseSharp';
+import {portfolioValue} from '../../Helpers/Functions'
 
 
-export default function AlertDialog({ open, setOpen }) {
+export default function Modal({ open, setOpen }) {
     const [amount, setAmount] = useState('')
     const [title, setTitle] = useState('')
     const [email, setEmail] = useState('')
+    const [response, setResponse] = useState('')
     const publicKey = 'pk_test_ac8bf65b31aed3b90225f7c19032b1fab4d6bb42'
 
     useEffect(() => {
@@ -45,6 +47,11 @@ export default function AlertDialog({ open, setOpen }) {
                             <span></span>
                             <CloseSharpIcon onClick={ () => setOpen(!open)}/>
                         </div>
+                        {
+                            response && (
+                                <div className='error1' >{response}</div>
+                            )
+                        }
                         <h3> Loan Form </h3>
                         <p className="signup_form-input-label">Loan Title</p>
                         <div className="signin_input">
@@ -79,7 +86,15 @@ export default function AlertDialog({ open, setOpen }) {
                                     <input data-test="input" type="password" className="input_field" id="password-confirm" placeholder="Confirm Password" required />
                                 </div>
                             </div>
-                            <Button variant='contained' style={{ backgroundColor: '#5AD882' }}>
+                            <Button variant='contained' style={{ backgroundColor: '#5AD882' }} onClick={async () => {
+                                if (amount > (portfolioValue) * .6) {
+                                    try {
+                                        await setResponse('You cannot borrow beyond 60% of your porfilio')
+                                    } catch (error) {
+                                        setResponse('error')
+                                    }
+                                }
+                            }}>
                                 <PaystackButton  {...paymentConfigs}/>
                             </Button>
                         </div>
