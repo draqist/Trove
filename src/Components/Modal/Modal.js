@@ -12,6 +12,7 @@ import CloseSharpIcon from '@mui/icons-material/CloseSharp';
 
 export default function AlertDialog({ open, setOpen }) {
     const [amount, setAmount] = useState('')
+    const [title, setTitle] = useState('')
     const [email, setEmail] = useState('')
     const publicKey = 'pk_test_ac8bf65b31aed3b90225f7c19032b1fab4d6bb42'
 
@@ -45,6 +46,12 @@ export default function AlertDialog({ open, setOpen }) {
                             <CloseSharpIcon onClick={ () => setOpen(!open)}/>
                         </div>
                         <h3> Loan Form </h3>
+                        <p className="signup_form-input-label">Loan Title</p>
+                        <div className="signin_input">
+                            <div className="form-input-1">
+                                <input data-test="input" type="tel" className="input_field" id="email" placeholder="Loan Title" value={title} required onChange={ (e) => setTitle(e.target.value) }/>
+                            </div>
+                        </div>
                         <p className="signup_form-input-label">Loan Amount</p>
                         <div className="signin_input">
                             <div className="form-input-1">
