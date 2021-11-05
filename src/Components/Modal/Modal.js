@@ -62,7 +62,7 @@ export default function Modal({ open, setOpen }) {
                         <p className="signup_form-input-label">Loan Amount</p>
                         <div className="signin_input">
                             <div className="form-input-1">
-                                <input data-test="input" type="tel" className="input_field" id="email" placeholder="Amount in Kobo" value={amount} required onChange={ (e) => setAmount(e.target.value) }/>
+                                <input data-test="input" type="tel" className="input_field" id="cmail" placeholder="Amount in Kobo" value={amount} required onChange={ (e) => setAmount(e.target.value) }/>
                             </div>
                         </div>
                         <div className="form-input-2">
@@ -76,7 +76,7 @@ export default function Modal({ open, setOpen }) {
                         <p className="signup_form-input-label">Email </p>
                         <div className="signin_input">
                             <div className="form-input-1">
-                                <input data-test="input" type="tel" className="input_field" id="email" placeholder="" value = {email} />
+                                <input data-test="input" type="tel" className="input_field" id="dmail" placeholder="" defaultValue = {email} />
                             </div>
                         </div>
                         <div className="form-input-2">
@@ -89,7 +89,7 @@ export default function Modal({ open, setOpen }) {
                             <Button variant='contained' style={{ backgroundColor: '#5AD882' }} onClick={async () => {
                                 if (amount > (portfolioValue) * .6) {
                                     try {
-                                        await setResponse('You cannot borrow beyond 60% of your porfilio')
+                                        setResponse('You cannot borrow beyond 60% of your porfilio')
                                     } catch (error) {
                                         setResponse('error')
                                     }

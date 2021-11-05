@@ -49,7 +49,7 @@ const Assetpage = () => {
                 <div className = 'main_content'>
                     <div className='trending_stocks'>
                         <h2> Trending</h2>
-                        <div className='t_stocks' data-aos = 'zoom-in' data-aos-duration = '1500'>
+                        <div className='t_stocks' data-aos = 'zoom-in' data-aos-duration = '1700'>
                             {
                                 data.trending.map((trends) =>
                                     <StockCard 
