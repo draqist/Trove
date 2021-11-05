@@ -33,7 +33,6 @@ export const handleSignIn = async (loginemail, loginpassword, redirect) => {
                 console.log(res)
                 if (res) {
                     redirect()
-                    await sendEmailVerification(auth.currentUser)
 
                 }
             } catch(error) {
@@ -45,7 +44,6 @@ export const handleSignIn = async (loginemail, loginpassword, redirect) => {
                 console.log(res)
                   if (res) {
                     redirect()
-                    await sendEmailVerification(auth.currentUser)
                       
                 }
             } catch (error) {
