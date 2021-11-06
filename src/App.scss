@@ -13,3 +13,8 @@ button{
   border: none;
 }
 }
+.btn-small{
+  @media (min-width: 791px){
+    display: none;
+  }
+}
