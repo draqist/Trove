@@ -1,9 +1,10 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { auth } from '../../firebase'
 import {signOut, onAuthStateChanged} from 'firebase/auth'
 import './Sidebar.scss'
 import logout from '../../bg-images/logout_black_24dp.svg'
+import { UserDataHandler } from '../../Helpers/Functions'
 
 
 const Sidebar = () => {
@@ -11,15 +12,22 @@ const Sidebar = () => {
     const [userName, setUserName] = useState('')
     //set user profile image
     const [userImage, setUserImage] = useState('')
-    onAuthStateChanged(auth, (user) => {
+    useEffect(() => {
+        onAuthStateChanged(auth, (user) => {
         if (user) {
             if (user.displayName === null) {
                 setUserName('Stranger')
             }else
             setUserImage(user.photoURL)
-                setUserName(user.displayName)
+            setUserName(user.displayName)
+            let User = (user.displayName)
+            let UserEmail = (user.email)
+            let UserImage = (user.photoURL)
+
+            UserDataHandler(User, UserEmail, UserImage)
         }
     })
+    }, [])
     const handleSignOut = async () => {
         await signOut(auth)
     }

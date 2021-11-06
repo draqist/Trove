@@ -7,6 +7,7 @@ import { data } from '../../portfolio'
 import Newscard from '../NewsCard/Newscard'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+
 const portValue = '10,000'
 
 const DashContent = () => {

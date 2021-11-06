@@ -1,13 +1,15 @@
-import { auth } from '../firebase';
+import { auth, db} from '../firebase';
 import {
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
     signInWithPopup,
     signInWithRedirect,
     GoogleAuthProvider,
-    sendEmailVerification
+    sendEmailVerification,
+    updateEmail
 } from 'firebase/auth'
 import {Portfolio} from '../portfolio'
+import { addDoc, collection, doc, updateDoc } from '@firebase/firestore';
 
 const googleProvider = new GoogleAuthProvider();
 const provider = new GoogleAuthProvider()
@@ -93,3 +95,38 @@ export const portfolioValue = Portfolio.reduce((portfolioTotal, totalQt) => {
     }, 0)
 export const totalAsset = Portfolio.length
 export const topAsset = Portfolio.length - 2
+
+
+export const UserDataHandler = async (User, UserEmail, UserImage, ) => {
+    try {
+        const UserDoc = await addDoc(collection(db, "Users"), {
+            DisplayName: `${User}`,
+            Email: `${UserEmail}`,
+            PhotoUrl: `${UserImage}`,
+            PhoneNumber: ` `
+        })
+        // const Doc = await setDoc()
+        
+        console.log('User info has been collected:', UserDoc.id)
+    } catch (error) {
+        console.log(error.message)
+    }
+}
+export const PhoneNumberHandler = async (UpdatedPhoneNumber) => {
+    try {
+        const Doc = doc(db, "Users")
+        await updateDoc(Doc, {
+            PhoneNumber: `${UpdatedPhoneNumber}`
+        })
+    } catch (error) {
+        console.log(error.message)
+    }
+}
+export const EmailUpdateHandler = async (user, email, setError,setResponse) => {
+        try {
+            await updateEmail(user, email )
+            setResponse('Email has been updated') 
+        } catch (error) {
+            setError(error.message)
+        }
+    }

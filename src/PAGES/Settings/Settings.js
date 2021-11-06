@@ -1,9 +1,10 @@
 import React, {useState,useEffect} from 'react'
 import Sidebar from '../../Components/SIdeBar/Sidebar'
 import { auth } from '../../firebase'
-import { onAuthStateChanged, sendPasswordResetEmail, updateEmail, updateProfile} from 'firebase/auth'
+import { onAuthStateChanged, sendPasswordResetEmail,updateProfile} from 'firebase/auth'
 import './settings.scss'
 import update from '../../bg-images/update_black_24dp.svg'
+import { EmailUpdateHandler, PhoneNumberHandler } from '../../Helpers/Functions'
 
 
 
@@ -49,26 +50,20 @@ const SettingsPage = () => {
         setPhoneNumber(e.target.value)
     }
     const EmailInputSetter = (e) => {
-        console.log(e.target.value)
         setEmail(e.target.value)
     }
     const NameHandler = (e) => {
         setDisplayName(e.target.value)
     }
     const ProfileHandler = async () => {
+        useEffect(() => {
+            PhoneNumberHandler(phoneNumber)
+        }, [])
         try {
             await updateProfile(auth, {
                 displayName: displayName,
             })
-            setResponse('Your profile has been updated') 
-        } catch (error) {
-            setError(error.message)
-        }
-    }
-    const EmailUpdateHandler = async () => {
-        try {
-            await updateEmail(user, email )
-            setResponse('Email has been updated') 
+            setResponse('Your profile has been updated')
         } catch (error) {
             setError(error.message)
         }
@@ -117,7 +112,7 @@ const SettingsPage = () => {
                       <label> Email</label>
                          <div className='input-field'>
                             <input type='text'value = {email} onChange={EmailInputSetter} />
-                            <img src={update} alt='' onClick={ EmailUpdateHandler } />
+                            <img src={update} alt='' onClick={ () => EmailUpdateHandler(user, email, setError, setResponse) } />
                             
                         </div>
                     </div>
