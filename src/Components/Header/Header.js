@@ -2,11 +2,13 @@ import React, {useState} from 'react'
 import './Header.scss'
 import { Link, NavLink } from 'react-router-dom'
 import { Button } from '@mui/material'
+import { CloseSharp } from '@mui/icons-material'
 
 const Header = () => {
     const [nav, setNav] = useState(false)
     return (
-        <div className = 'header-nav'>
+        <div>
+            <div className = 'header-nav'>
             <div className='logo_image'>
                 <span>
                     <img src='https://troveapp.co/assets/images/logo.png' alt='' />
@@ -40,6 +42,9 @@ const Header = () => {
                             </Button>
                         </div>
                     </nav>
+                </div>
+            </div>
+                
                         <div className = 'btn-small'>
                             <button className="toggle-button" onClick = {()=> setNav(!nav)}>
                                 <div className="toggle-button__line"></div>
@@ -47,18 +52,22 @@ const Header = () => {
                                 <div className="toggle-button__line"></div>
                             </button>
                         </div>
-                    {nav &&
-                        <div className = 'm-nav'>
-                            <Link to = '/'> <h4> Home </h4></Link>
-                             <a href = "https://troveapp.co/blog" target='blank' rel='noreferrer'> <h4> Blog</h4> </a>
-                        <Link to = '#'> <h4> Fees </h4></Link>
-                        <Link to = '/login' style = {{display: 'block', fontWeight: '500', }}> <h4> Login</h4> </Link>
-                        <Link to = '/signup'> <h4> Sign up </h4> </Link>
-                        </div>
-                    }
-                </div>
-            </div>
+        </div>
+            {nav &&
                 
+                <div>
+                    <div className = 'm-nav'>
+                        <div style = {{position: 'absolute', top: '1rem', right: '1rem'}}>
+                        <CloseSharp onClick={ ()=> setNav(!nav) }/>
+                        </div>
+                    <Link to='/'> <h4> Home </h4></Link>
+                    <a href="https://troveapp.co/blog" target='blank' rel='noreferrer'> <h4> Blog</h4> </a>
+                    <Link to='#'> <h4> Fees </h4></Link>
+                    <Link to='/login' style={{ display: 'block', fontWeight: '500', }}> <h4> Login</h4> </Link>
+                    <Link to='/signup'> <h4> Sign up </h4> </Link>
+                </div>
+                </div>
+            }
         </div>
     )
 }
