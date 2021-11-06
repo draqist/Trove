@@ -45,7 +45,7 @@ const Header = () => {
                 </div>
             </div>
                 
-                        <div className = 'btn-small'>
+                        <div className = 'btnsmall'>
                             <button className="toggle-button" onClick = {()=> setNav(!nav)}>
                                 <div className="toggle-button__line"></div>
                                 <div className="toggle-button__line"></div>
