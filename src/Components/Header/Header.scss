@@ -101,19 +101,19 @@
 .m_nav{
     position: absolute;
     height: 20%;
-    top: 0;
+    top: 2%;
+    right: 5%;
     background-color: #59D882;
     color: white;
     padding: 3rem 4rem;
     text-align: center;
     font-family: 'Montserrat';
-    animation: Slide 2s ease-in-out 1;
     h4{
         font-family: 'Montserrat';
+        margin: .5rem 0;
     }
     a{
         color: white;
-        margin: 1rem 0;
     }
 }
 @keyframes Slide {

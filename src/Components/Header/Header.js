@@ -49,11 +49,11 @@ const Header = () => {
                         </div>
                     {nav &&
                         <div className = 'm_nav'>
-                            <Link to = '/'> Home</Link>
-                             <a href = "https://troveapp.co/blog" target='blank' rel='noreferrer'> Blog </a>
-                        <Link to = '#'> Fees</Link>
-                        <Link to = '/login' style = {{display: 'block', fontWeight: '500', }}> Login </Link>
-                        <Link to = '/signup'> Sign up </Link>
+                            <Link to = '/'> <h4> Home </h4></Link>
+                             <a href = "https://troveapp.co/blog" target='blank' rel='noreferrer'> <h4> Blog</h4> </a>
+                        <Link to = '#'> <h4> Fees </h4></Link>
+                        <Link to = '/login' style = {{display: 'block', fontWeight: '500', }}> <h4> Login</h4> </Link>
+                        <Link to = '/signup'> <h4> Sign up </h4> </Link>
                         </div>
                     }
                 </div>
