@@ -79,6 +79,7 @@
 }
 .btn-small{
     display: none;
+    padding: 0;
     @media (max-width: 769px){
         display: flex;
     }
