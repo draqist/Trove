@@ -48,7 +48,7 @@ const Header = () => {
                             </button>
                         </div>
                     {nav &&
-                        <div className = 'm_nav'>
+                        <div className = 'm-nav'>
                             <Link to = '/'> <h4> Home </h4></Link>
                              <a href = "https://troveapp.co/blog" target='blank' rel='noreferrer'> <h4> Blog</h4> </a>
                         <Link to = '#'> <h4> Fees </h4></Link>
