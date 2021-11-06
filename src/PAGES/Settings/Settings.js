@@ -4,7 +4,7 @@ import { auth } from '../../firebase'
 import { onAuthStateChanged, sendPasswordResetEmail, updateEmail, updateProfile} from 'firebase/auth'
 import './settings.scss'
 import update from '../../bg-images/update_black_24dp.svg'
-import { NavLink } from 'react-router-dom'
+
 
 
 
@@ -80,31 +80,11 @@ const SettingsPage = () => {
                 </div>
                      
             <div className='settings_content'>
-                <div className = 'btn-small'>
-                            <button className="toggle-button" onClick = {()=> setNav(!nav)}>
-                                <div className="toggle-button__line"></div>
-                                <div className="toggle-button__line"></div>
-                                <div className="toggle-button__line"></div>
-                            </button>
-                        </div>
+                
                 {nav &&
                         <div className = 'm_nav'>
-                            <div className = 'wnl'>
-                                <NavLink activeClassName = 'selected'  to='/dashboard' onClick = {() => setNav(!nav)}>
-                        <h4> Dashboard</h4>
-                    </NavLink>
-                    <NavLink activeClassName = 'selected'  to = '/portfolio' onClick = {() => setNav(!nav)}>
-                       <h4> Portfolio</h4>
-                    </NavLink>
-                    <NavLink activeClassName = 'selected' to='/assets' onClick = {() => setNav(!nav)}>
-                        <h4> Assets</h4>
-                    </NavLink>
-                    <NavLink activeClassName = 'selected'  to='/loans' onClick = {() => setNav(!nav)}>
-                        <h4> Loans </h4>
-                    </NavLink>
-                    <NavLink activeClassName = 'selected'to='/settings' onClick = {() => setNav(!nav)} >
-                        <h4> Settings </h4>
-                    </NavLink>
+                    <div className='wnl'>
+                        <Sidebar/>
                             </div>
                         </div>
                 }
@@ -113,13 +93,20 @@ const SettingsPage = () => {
                              {error}
                          </div>
                      )}
+                    <div className = 'btn-small'>
+                            <button className="toggle-button" onClick = {()=> setNav(!nav)}>
+                                <div className="toggle-button__line"></div>
+                                <div className="toggle-button__line"></div>
+                                <div className="toggle-button__line"></div>
+                            </button>
+                        </div>
                      <h1> Account Overview</h1>
                 {response && (
                     <div className='success' >
                         {response}
                     </div>
                 )}
-                <div className='profile_settings'>
+                <div className='profile_settings' onClick = {()=> setNav(!nav)}>
                     <div className = 'form-field'>
                       <label> Display Name</label>
                          <div className='input-field'>

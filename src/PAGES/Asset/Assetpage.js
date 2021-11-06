@@ -4,7 +4,6 @@ import StockCard from '../../Components/StockCard/StockCard'
 import Newscard from '../../Components/NewsCard/Newscard'
 import { data } from '../../portfolio'
 import Sidebar from '../../Components/SIdeBar/Sidebar'
-import { NavLink } from 'react-router-dom'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
@@ -17,36 +16,23 @@ const Assetpage = () => {
                 <Sidebar/>
             </div>
             <div className='asset_content'>
-                <div className = 'btn-small'>
+                
+                {nav &&
+                    <div div className = 'm_nav'>
+                    <div className='wnl'>
+                       <Sidebar/>
+                        </div>
+                    </div>
+                }
+
+                <div className = 'main_content'>
+                    <div className = 'btn-small'>
                             <button className="toggle-button" onClick = {()=> setNav(!nav)}>
                                 <div className="toggle-button__line"></div>
                                 <div className="toggle-button__line"></div>
                                 <div className="toggle-button__line"></div>
                             </button>
                 </div>
-                {nav &&
-                    <div div className = 'm_nav'>
-                    <div className='wnl'>
-                        <NavLink activeClassName = 'selected'  to='/dashboard' onClick = {() => setNav(!nav)}>
-                        <h4> Dashboard</h4>
-                    </NavLink>
-                    <NavLink activeClassName = 'selected'  to = '/portfolio' onClick = {() => setNav(!nav)}>
-                       <h4> Portfolio</h4>
-                    </NavLink>
-                    <NavLink activeClassName = 'selected' to='/assets' onClick = {() => setNav(!nav)}>
-                        <h4> Assets</h4>
-                    </NavLink>
-                    <NavLink activeClassName = 'selected'  to='/loans' onClick = {() => setNav(!nav)}>
-                        <h4> Loans </h4>
-                    </NavLink>
-                    <NavLink activeClassName = 'selected'to='/settings' onClick = {() => setNav(!nav)} >
-                        <h4> Settings </h4>
-                    </NavLink>
-                        </div>
-                    </div>
-                }
-
-                <div className = 'main_content'>
                     <div className='trending_stocks'>
                         <h2> Trending</h2>
                         <div className='t_stocks' data-aos = 'zoom-in' data-aos-duration = '1700'>

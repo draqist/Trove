@@ -6,13 +6,29 @@ import Modal from '../../Components/Modal/Modal';
 
 const Loanspage = () => {
     const [open, setOpen] = useState(false)
+    const [nav, setNav] = useState(false)
     return (
         <div className = 'loans_page'>
             <div className='sidebar_desk'>
                 <Sidebar/>
             </div>
             <div className='loan_content'>
-                <div className = 'loan_headers'>
+                
+                {nav &&
+                        <div className = 'm_nav'>
+                            <div className = 'wnl'>
+                        <Sidebar/>
+                            </div>
+                        </div>
+                }
+                <div className='loan_headers'>
+                    <div className = 'btn-small'>
+                            <button className="toggle-button" onClick = {()=> setNav(!nav)}>
+                                <div className="toggle-button__line"></div>
+                                <div className="toggle-button__line"></div>
+                                <div className="toggle-button__line"></div>
+                            </button>
+                        </div>
                     <div className = 'balances'>
                         <div className='loan-title' >
                             <h2> All Loans </h2>

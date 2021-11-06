@@ -49,10 +49,6 @@
                     border: 2px solid #59D882;
                     background-color: transparent;
                     font-size: 14px;
-                    // :hover{
-                    //     background-color: #59D882;
-                    //     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-                    // }
                 }
             }
             .primary-1{
@@ -102,4 +98,34 @@
     background: #000;
 }
 }
-
+.m_nav{
+    position: absolute;
+    height: 20%;
+    top: 0;
+    background-color: #59D882;
+    color: white;
+    padding: 3rem 4rem;
+    text-align: center;
+    font-family: 'Montserrat';
+    animation: Slide 2s ease-in-out 1;
+    h4{
+        font-family: 'Montserrat';
+    }
+    a{
+        color: white;
+        margin: 1rem 0;
+    }
+}
+@keyframes Slide {
+    from {
+        opacity: .9;
+        transform: translateX(100%);
+    }
+    
+    to{
+        right: 70px;
+        top: 70px;
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}

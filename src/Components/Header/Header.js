@@ -41,17 +41,19 @@ const Header = () => {
                         </div>
                     </nav>
                         <div className = 'btn-small'>
-                            <button class="toggle-button" onClick = {()=> setNav(!nav)}>
-                                <div class="toggle-button__line"></div>
-                                <div class="toggle-button__line"></div>
-                                <div class="toggle-button__line"></div>
+                            <button className="toggle-button" onClick = {()=> setNav(!nav)}>
+                                <div className="toggle-button__line"></div>
+                                <div className="toggle-button__line"></div>
+                                <div className="toggle-button__line"></div>
                             </button>
                         </div>
                     {nav &&
                         <div className = 'm_nav'>
-                            <h4> Home</h4>
-                            <h4> Blog </h4>
-                            <h4> Fees</h4>
+                            <Link to = '/'> Home</Link>
+                             <a href = "https://troveapp.co/blog" target='blank' rel='noreferrer'> Blog </a>
+                        <Link to = '#'> Fees</Link>
+                        <Link to = '/login' style = {{display: 'block', fontWeight: '500', }}> Login </Link>
+                        <Link to = '/signup'> Sign up </Link>
                         </div>
                     }
                 </div>
