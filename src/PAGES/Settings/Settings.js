@@ -106,7 +106,7 @@ const SettingsPage = () => {
                         {response}
                     </div>
                 )}
-                <div className='profile_settings' onClick = {()=> setNav(!nav)}>
+                <div className='profile_settings'>
                     <div className = 'form-field'>
                       <label> Display Name</label>
                          <div className='input-field'>
