@@ -9,8 +9,14 @@ import {
     updateEmail,
     sendPasswordResetEmail
 } from 'firebase/auth'
+import {
+    addDoc,
+    collection,
+    doc,
+    updateDoc,
+    serverTimestamp
+} from '@firebase/firestore';
 import {Portfolio} from '../portfolio'
-import { addDoc, collection, doc, updateDoc } from '@firebase/firestore';
 
 const googleProvider = new GoogleAuthProvider();
 const provider = new GoogleAuthProvider()
@@ -29,7 +35,7 @@ export const handleSignIn = async (loginemail, loginpassword, redirect) => {
         }
     }
 
-   export const handleGoogleSignIn = async (setError, redirect) => {
+export const handleGoogleSignIn = async (setError, redirect) => {
         if (window.screen < 400) {
             try {
                let res = await signInWithRedirect(auth, provider)
@@ -96,15 +102,15 @@ export const portfolioValue = Portfolio.reduce((portfolioTotal, totalQt) => {
     }, 0)
 export const totalAsset = Portfolio.length
 export const topAsset = Portfolio.length - 2
-
-
 export const UserDataHandler = async (User, UserEmail, UserImage, ) => {
     try {
         const UserDoc = await addDoc(collection(db, "Users"), {
             DisplayName: `${User}`,
             Email: `${UserEmail}`,
             PhotoUrl: `${UserImage}`,
-            PhoneNumber: ` `
+            PhoneNumber: ` `,
+            timestamp: serverTimestamp()
+
         })
         // const Doc = await setDoc()
         
@@ -117,7 +123,8 @@ export const PhoneNumberHandler = async (UpdatedPhoneNumber) => {
     try {
         const Doc = doc(db, "Users")
         await updateDoc(Doc, {
-            PhoneNumber: `${UpdatedPhoneNumber}`
+            PhoneNumber: `${UpdatedPhoneNumber}`,
+            timestamp: serverTimestamp()
         })
     } catch (error) {
         console.log(error.message)
@@ -138,4 +145,4 @@ export const NewpasswordSetter = async (email, setResponse, setError) => {
         } catch (error){
             setError(error.message)
         }
-    }
+}

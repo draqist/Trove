@@ -48,16 +48,8 @@ const SettingsPage = () => {
         setDisplayName(e.target.value)
         console.log(displayName)
     }
-    const ProfileHandler =  () => {
+    const ProfileHandler =  (phoneNumber) => {
             PhoneNumberHandler(phoneNumber)
-        // try {
-        //     await updateProfile(auth, {
-        //         displayName: displayName,
-        //     })
-        //     setResponse('Your profile has been updated')
-        // } catch (error) {
-        //     setError(error.message)
-        // }
     }
     return (
              <div className='settings_page'>
@@ -123,7 +115,7 @@ const SettingsPage = () => {
                     </div>
                 </div>
                 <div className = 'profile_settings'>
-                    <button className = 'password-update' onClick= {ProfileHandler}>
+                    <button className = 'password-update' onClick= {()=> ProfileHandler(phoneNumber)}>
                         Update profile
                     </button>
                 </div>
