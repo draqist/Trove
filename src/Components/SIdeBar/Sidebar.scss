@@ -3,6 +3,9 @@
     background-color:  #031037;
     overflow: hidden;
     height: 100%;
+    @media (max-width: 790px){
+        z-index: 3000000000000000000000000;
+    }
     button{
         background-color: transparent;
         outline: none;
