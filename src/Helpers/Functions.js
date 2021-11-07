@@ -6,7 +6,8 @@ import {
     signInWithRedirect,
     GoogleAuthProvider,
     sendEmailVerification,
-    updateEmail
+    updateEmail,
+    sendPasswordResetEmail
 } from 'firebase/auth'
 import {Portfolio} from '../portfolio'
 import { addDoc, collection, doc, updateDoc } from '@firebase/firestore';
@@ -127,6 +128,14 @@ export const EmailUpdateHandler = async (user, email, setError,setResponse) => {
             await updateEmail(user, email )
             setResponse('Email has been updated') 
         } catch (error) {
+            setError(error.message)
+        }
+}
+export const NewpasswordSetter = async (email, setResponse, setError) => {
+        try {
+            await sendPasswordResetEmail(auth, email)
+            setResponse('Password Reset Link Sent, Kindly check your email')
+        } catch (error){
             setError(error.message)
         }
     }

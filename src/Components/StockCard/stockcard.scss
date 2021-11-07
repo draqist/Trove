@@ -35,14 +35,18 @@
     }
     .prices{
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-around;
         align-items: center;
-        padding: 1rem 6px 0;
+        padding: 1rem 0px 0;
         text-align: center;
 
         h5{
             margin: 0 0;
             padding-bottom: 0;
+            @media (max-width: 600px){
+                padding: 0;
+                margin: 0;
+            }
         }
         span{
             font-size: .83em;

@@ -1,10 +1,10 @@
 import React, {useState,useEffect} from 'react'
 import Sidebar from '../../Components/SIdeBar/Sidebar'
 import { auth } from '../../firebase'
-import { onAuthStateChanged, sendPasswordResetEmail,updateProfile} from 'firebase/auth'
+import { onAuthStateChanged} from 'firebase/auth'
 import './settings.scss'
 import update from '../../bg-images/update_black_24dp.svg'
-import { EmailUpdateHandler, PhoneNumberHandler } from '../../Helpers/Functions'
+import { EmailUpdateHandler, PhoneNumberHandler, NewpasswordSetter } from '../../Helpers/Functions'
 
 
 
@@ -37,15 +37,7 @@ const SettingsPage = () => {
     const handleConfirmPassword = (e) => {
         setConfirmPassword(e.target.value)
     }
-    const NewpasswordSetter = async () => {
-        try {
-            await sendPasswordResetEmail(auth, email)
-            setResponse('Password Reset Link Sent, Kindly check your email')
-        } catch (error){
-            setError(error.message)
-            console.log(error)
-        }
-    }
+    
     const PhoneSetter = (e) => {
         setPhoneNumber(e.target.value)
     }
@@ -54,24 +46,23 @@ const SettingsPage = () => {
     }
     const NameHandler = (e) => {
         setDisplayName(e.target.value)
+        console.log(displayName)
     }
-    const ProfileHandler = async () => {
-        useEffect(() => {
+    const ProfileHandler =  () => {
             PhoneNumberHandler(phoneNumber)
-        }, [])
-        try {
-            await updateProfile(auth, {
-                displayName: displayName,
-            })
-            setResponse('Your profile has been updated')
-        } catch (error) {
-            setError(error.message)
-        }
+        // try {
+        //     await updateProfile(auth, {
+        //         displayName: displayName,
+        //     })
+        //     setResponse('Your profile has been updated')
+        // } catch (error) {
+        //     setError(error.message)
+        // }
     }
     return (
              <div className='settings_page'>
                 <div className = 'sidebar_desk'>
-                    <Sidebar/>
+                <Sidebar />
                 </div>
                      
             <div className='settings_content'>
@@ -79,7 +70,7 @@ const SettingsPage = () => {
                 {nav &&
                         <div className = 'm_nav'>
                     <div className='wnl'>
-                        <Sidebar/>
+                        <Sidebar nav={nav} setNav={ setNav }/>
                             </div>
                         </div>
                 }
@@ -160,7 +151,7 @@ const SettingsPage = () => {
                     </div>
                 </div>
                 <div className='password_settings'>
-                     <button className = 'password-update' onClick= {NewpasswordSetter}>
+                     <button className = 'password-update' onClick= {() => NewpasswordSetter(email, setResponse, setError)}>
                         Reset Password
                     </button>
                 </div>

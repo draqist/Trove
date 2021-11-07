@@ -66,7 +66,7 @@
                 }
             }
             .input-field{
-                height: 2.5rem;
+                // height: 2.5rem;
                 width: 23rem;
                 border-bottom-right-radius:8px;
                 border-bottom: 2px solid #5AD882;
@@ -80,9 +80,6 @@
                     padding-right: 8px;
                 }
                 input{
-                    ::placeholder{
-                        font-size: 10px;
-                    }
                     width: 23rem;
                     height: 2.5rem;
                     background-color: #F8F8F8;

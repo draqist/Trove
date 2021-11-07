@@ -1,10 +1,14 @@
 # THE TROVE TRADING APP
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## `Trove` is a stock trading app where a user can get valuable information about stocks, and also invest in those stocks. A user can also take loans up to 60% of his portfolio value and then choose to payback within the space of 6-12 months.
+
+# FIREBASE
+## `Firebase` was used as the authentication and authorization provider, with user validation after login and also emailverification after registration. ## `Firestore` was used to store user information such as the user's display name, their emails, Phone Numbers and their respective profile images. User information can be modified if the user so wishes. 
 
 ## Available Scripts
 
-In the project directory, you can run:
+To run this project, cd into the root directory : then 
 
 ### `yarn start`
 

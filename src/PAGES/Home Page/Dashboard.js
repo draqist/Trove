@@ -15,7 +15,7 @@ const DashboardPage = () => {
                 {nav &&
                         <div className = 'm_nav'>
                     <div className='wnl'>
-                        <Sidebar/>
+                        <Sidebar nav={nav} setNav={ setNav }/>
                             </div>
                         </div>
                 }

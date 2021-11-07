@@ -5,9 +5,11 @@ import {signOut, onAuthStateChanged} from 'firebase/auth'
 import './Sidebar.scss'
 import logout from '../../bg-images/logout_black_24dp.svg'
 import { UserDataHandler } from '../../Helpers/Functions'
+import notificationIcon from '../../bg-images/notifications_white_24dp.svg'
+import { CloseSharp } from '@mui/icons-material'
 
 
-const Sidebar = () => {
+const Sidebar = ({nav, setNav}) => {
     // sets users name
     const [userName, setUserName] = useState('')
     //set user profile image
@@ -36,7 +38,8 @@ const Sidebar = () => {
         <div className = 'sidebar_container-main'>
             <section className='dashboardlogo_notifications'>
                 <img src='https://i.ibb.co/6Ftk5F6/dashboardlogo.png' alt='' className = 'logo' />
-                <div className = 'not'/>
+                <img src={notificationIcon} alt='' className='not' />
+                <CloseSharp className='not_0' onClick={() => setNav(!nav) }/>
             </section>
             <section className='user_info-avatar'>
                 <img src = {userImage} alt = '' className='user_avatar' />

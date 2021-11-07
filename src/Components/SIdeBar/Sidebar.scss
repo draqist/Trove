@@ -26,7 +26,17 @@
     .not{
         width: 24px;
         height: 24px;
-        background-image: url('../../bg-images/notifications_white_24dp.svg');
+        @media (max-width: 790px){
+            display: none;
+        }
+    }
+    .not_0{
+        width: 24px;
+        height: 24px;
+        color: white;
+        @media (min-width: 790px){
+            display: none;
+        }
     }
     .not1{
         width: 24px;
