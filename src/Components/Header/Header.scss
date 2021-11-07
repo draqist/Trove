@@ -77,12 +77,25 @@
         
 }
 }
-.btnsmall{
-    display: none;
-    padding: 0;
-    @media (max-width: 769px){
+.btn-small1{
+  @media (max-width: 790px){
+        background-color: rgb(92, 92, 92);
+        width: 47px;
+        height: 50px;
         display: flex;
+        border-radius: 50%;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        padding-left: 4px;
+        right:1rem;
+        box-shadow: 0 0px 10px rgba(18, 18, 19, 0.459);
+        top: 1rem;
+        z-index: 0;
     }
+  @media (min-width: 791px){
+    display: none;
+  }
 }
 .toggle-button {
     display: flex;
@@ -100,12 +113,17 @@
     height: 2px;
     background: #000;
 }
+    .toggle-button_line {
+    width: 20px;
+    height: 2px;
+    background: #fff;
+}
 }
 .m-nav{
     position: absolute;
     height: 20%;
     top: 2%;
-    right: 5%;
+    right: 4%;
     background-color: #59D882;
     color: white;
     padding: 3rem 4rem;

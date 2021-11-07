@@ -45,11 +45,11 @@ const Header = () => {
                 </div>
             </div>
                 
-                        <div className = 'btnsmall'>
+                        <div className = 'btn-small1'>
                             <button className="toggle-button" onClick = {()=> setNav(!nav)}>
-                                <div className="toggle-button__line"></div>
-                                <div className="toggle-button__line"></div>
-                                <div className="toggle-button__line"></div>
+                                <div className="toggle-button_line"></div>
+                                <div className="toggle-button_line"></div>
+                                <div className="toggle-button_line"></div>
                             </button>
                         </div>
         </div>
