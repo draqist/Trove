@@ -14,6 +14,21 @@ button{
 }
 }
 .btn-small{
+  @media (max-width: 790px){
+        background-color: white;
+        width: 47px;
+        height: 50px;
+        display: flex;
+        border-radius: 50%;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        padding-left: 4px;
+        left:12px;
+        box-shadow: 0 0px 10px rgba(18, 18, 19, 0.459);
+        top: 8px;
+        z-index: 30000;
+    }
   @media (min-width: 791px){
     display: none;
   }
