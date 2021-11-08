@@ -109,6 +109,8 @@ export const UserDataHandler = async (User, UserEmail, UserImage, ) => {
             Email: `${UserEmail}`,
             PhotoUrl: `${UserImage}`,
             PhoneNumber: ` `,
+            WalletBalance: ` `,
+            LoanBalance: ``,
             timestamp: serverTimestamp()
 
         })
