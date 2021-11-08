@@ -10,11 +10,9 @@ import {
     sendPasswordResetEmail
 } from 'firebase/auth'
 import {
-    addDoc,
-    collection,
     doc,
-    updateDoc,
-    serverTimestamp
+    serverTimestamp,
+    setDoc
 } from '@firebase/firestore';
 import {Portfolio} from '../portfolio'
 
@@ -101,10 +99,12 @@ export const portfolioValue = Portfolio.reduce((portfolioTotal, totalQt) => {
             return totalQt.equityValue + portfolioTotal
     }, 0)
 export const totalAsset = Portfolio.length
-export const topAsset = Portfolio.length - 2
+export const topAsset = totalAsset - 2
+
 export const UserDataHandler = async (User, UserEmail, UserImage, ) => {
     try {
-        const UserDoc = await addDoc(collection(db, "Users"), {
+        const UserRef =  doc(db, "Users", `${User}`)
+        const UserDoc = await setDoc(UserRef, {
             DisplayName: `${User}`,
             Email: `${UserEmail}`,
             PhotoUrl: `${UserImage}`,
@@ -112,20 +112,18 @@ export const UserDataHandler = async (User, UserEmail, UserImage, ) => {
             timestamp: serverTimestamp()
 
         })
-        // const Doc = await setDoc()
-        
-        console.log('User info has been collected:', UserDoc.id)
+        console.log('User info has been collected:', UserDoc)
     } catch (error) {
         console.log(error.message)
     }
 }
 export const PhoneNumberHandler = async (UpdatedPhoneNumber) => {
     try {
-        const Doc = doc(db, "Users")
-        await updateDoc(Doc, {
-            PhoneNumber: `${UpdatedPhoneNumber}`,
-            timestamp: serverTimestamp()
-        })
+        // const Doc = doc(db, "Users", )
+        // await updateDoc(Doc, {
+        //     PhoneNumber: `${UpdatedPhoneNumber}`,
+        //     timestamp: serverTimestamp()
+        // })
     } catch (error) {
         console.log(error.message)
     }

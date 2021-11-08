@@ -95,7 +95,7 @@ export default function Modal({ open, setOpen }) {
                                     }
                                 }
                             }}>
-                                <PaystackButton  {...paymentConfigs}/>
+                                <PaystackButton  {...paymentConfigs} />
                             </Button>
                         </div>
                     </div>

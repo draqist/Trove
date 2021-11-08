@@ -22,14 +22,13 @@ const Sidebar = ({nav, setNav}) => {
             }else
             setUserImage(user.photoURL)
             setUserName(user.displayName)
-            let User = (user.displayName)
-            let UserEmail = (user.email)
-            let UserImage = (user.photoURL)
-
+            const User = (user.displayName)
+            const UserEmail = (user.email)
+            const UserImage = (user.photoURL)
             UserDataHandler(User, UserEmail, UserImage)
         }
     })
-    }, [])
+    },[])
     const handleSignOut = async () => {
         await signOut(auth)
     }
