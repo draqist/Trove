@@ -10,3 +10,21 @@
     padding: 0 1rem;
     color: #031037;
 }
+.sym{
+    margin-left: -4.5rem;
+    @media (max-width: 790px) {
+        margin-left: -3.5rem;
+    }
+}
+.pps{
+    margin-left: -1.5rem;
+    @media (max-width: 790px) {
+        margin-left: -.5rem;
+    }
+}
+.eqv{
+    margin-right: 3rem;
+    @media (max-width: 790px) {
+        margin-left: -2rem;
+    }
+}
