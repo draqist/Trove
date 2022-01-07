@@ -3,10 +3,12 @@ import React, {useState} from 'react'
 import Sidebar from '../../Components/SIdeBar/Sidebar'
 import './loans.scss'
 import Modal from '../../Components/Modal/Modal';
+import { userQuery } from '../../Helpers/Functions';
 
 const Loanspage = () => {
     const [open, setOpen] = useState(false)
     const [nav, setNav] = useState(false)
+    userQuery()
     return (
         <div className = 'loans_page'>
             <div className='sidebar_desk'>

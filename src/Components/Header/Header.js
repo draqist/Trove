@@ -44,30 +44,29 @@ const Header = () => {
                     </nav>
                 </div>
             </div>
-                
-                        <div className = 'btn-small1'>
-                            <button className="toggle-button" onClick = {()=> setNav(!nav)}>
-                                <div className="toggle-button_line"></div>
-                                <div className="toggle-button_line"></div>
-                                <div className="toggle-button_line"></div>
-                            </button>
-                        </div>
+            <div className = 'btn-small1'>
+                <button className="toggle-button" onClick = {()=> setNav(!nav)}>
+                    <div className="toggle-button_line"></div>
+                    <div className="toggle-button_line"></div>
+                    <div className="toggle-button_line"></div>
+                </button>
+            </div>
         </div>
-            {nav &&
-                
-                <div>
-                    <div className = 'm-nav'>
-                        <div style = {{position: 'absolute', top: '1rem', right: '1rem'}}>
-                        <CloseSharp onClick={ ()=> setNav(!nav) }/>
-                        </div>
-                    <Link to='/'> <h4> Home </h4></Link>
-                    <a href="https://troveapp.co/blog" target='blank' rel='noreferrer'> <h4> Blog</h4> </a>
-                    <Link to='#'> <h4> Fees </h4></Link>
-                    <Link to='/login' style={{ display: 'block', fontWeight: '500', }}> <h4> Login</h4> </Link>
-                    <Link to='/signup'> <h4> Sign up </h4> </Link>
-                </div>
-                </div>
-            }
+  {nav &&
+      
+      <div>
+          <div className = 'm-nav'>
+              <div style = {{position: 'absolute', top: '1rem', right: '1rem'}}>
+              <CloseSharp onClick={ ()=> setNav(!nav) }/>
+              </div>
+          <Link to='/'> <h4> Home </h4></Link>
+          <a href="https://troveapp.co/blog" target='blank' rel='noreferrer'> <h4> Blog</h4> </a>
+          <Link to='#'> <h4> Fees </h4></Link>
+          <Link to='/login' style={{ display: 'block', fontWeight: '500', }}> <h4> Login</h4> </Link>
+          <Link to='/signup'> <h4> Sign up </h4> </Link>
+      </div>
+      </div>
+  }
         </div>
     )
 }

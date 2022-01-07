@@ -12,7 +12,9 @@ import {
 import {
     doc,
     serverTimestamp,
-    setDoc
+    setDoc,
+    collection,
+    query
 } from '@firebase/firestore';
 import {Portfolio} from '../portfolio'
 
@@ -145,4 +147,14 @@ export const NewpasswordSetter = async (email, setResponse, setError) => {
         } catch (error){
             setError(error.message)
         }
+}
+export const userQuery = async () => {
+    const loans = collection(db, 'Users')
+    console.log(loans)
+    try {
+        const loanItem = await query(loans)
+        console.log(loanItem)
+    } catch (error) {
+        console.log(error)
+    }
 }

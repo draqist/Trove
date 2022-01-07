@@ -279,18 +279,16 @@
         h4{
             color: white;
             @media (max-width: 790px){
-                            // white-space: nowrap;
-                            font-size: .5rem;
-                            text-transform: lowercase;
-                        }
+              font-size: .5rem;
+              text-transform: lowercase;
+            }
         }
         h4{
             margin: .75em 10px .4em;
             @media (max-width: 790px){
-                            // white-space: nowrap;
-                            font-size: .5rem;
-                            text-transform: lowercase;
-                        }
+              font-size: .5rem;
+              text-transform: lowercase;
+            }
         }
     }
     @keyframes navSlide {
